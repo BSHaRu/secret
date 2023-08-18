@@ -1,0 +1,32 @@
+<!-- 07_window_parent.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>parent window</title>
+    <script>
+        let child;
+        function openChild(){
+            child = window.open('07_window_child.html','width=500, height=350, top=100, left=100');
+        }
+
+        function setChild(){
+            // 자식창의 입력 태그
+            let input = child.document.getElementById("inputData");
+            // 부모창의 입력 태그
+            let send = document.getElementById("sendData");
+
+            input.value = send.value;
+        } // 자식창을 열고 부모창 입력태그를 입력한 후 전달하면 자식창 입력태그에 똑같이 적힘
+
+        // console.log(opener); 이건 작동안하는게 맞음
+    </script>
+</head>
+<body>
+    <h1>부모창</h1>
+    <hr/>
+    <input type="button" value="자식창 열기" onclick="openChild();" />
+    <input type="text" id="sendData" />
+    <input type="button" value="전달" onclick="setChild();" />
+</body>
+</html>

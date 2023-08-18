@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;c7_comparable.CompareableEx&apos; to &apos;ComparableEx&apos;&#x0D;&#x0A;- Original project: &apos;14_collection_framework&apos;&#x0D;&#x0A;- Original element: &apos;c7_comparable.CompareableEx&apos;&#x0D;&#x0A;- Renamed element: &apos;c7_comparable.ComparableEx&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CompareableEx&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;c7_comparable{CompareableEx.java[CompareableEx" matchStrategy="1" name="ComparableEx" qualified="false" references="true" similarDeclarations="false" stamp="1652158161791" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,57 @@
+<!-- 08_event.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <input type="password" id="pass" />
+    <label>
+        <input type="checkbox" id="open">
+        비밀번호 보기
+    </label>
+    <br/>
+    <!-- (label>input:radio[name='r1'])*3 -->
+    <label>
+        <input type="radio" name="r1" />
+        test
+    </label>
+    <label>
+        <input type="radio" name="r1" />
+        test
+    </label>
+    <label>
+        <input type="radio" name="r1" />
+        test
+    </label>
+
+    <script>
+        $("#open").on("change",function(){
+            console.log('changed');
+            // checked 속성이 체크 상태일때 추가 , 체크 해제 시 속성값 삭제
+            if($(this).is(":checked")){
+                alert("체크 됨");
+                $("#pass").attr("type","text"); // #pass속성의 type을 text로 바꿈
+            }else{
+                alert("체크 해제 됨");
+                $("#pass").attr("type","password");
+            }   
+        }).on("click",function(evnet){
+            event.preventDefault();
+        });
+
+        $("input[type=radio]").on("keydown",function(e){
+           console.log(e.key);
+           console.log(e.keyCode);
+           e.preventDefault(); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- 03_location.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+    </script>
+</head>
+<body>
+    <!-- location 객체를 통해서 url창을 조작해서 특정 페이지로 이동
+       -href : 해당 페이지로 이동 후 뒤로가기 누르면 그대로 남아있음 
+       -replace : 해당 페이지로 이동후 뒤로가기를 누르면 기록이 안남기에 페이지가 안남음 => 라이브서버로 켜서 페이지 이동하면 뒤로가기 버튼자체가 활성화가 안되네?
+    -->
+    <button onclick="location.href='https://www.naver.com'">
+        네이버 href 이동
+    </button>
+    <button onclick="location.replace('https://www.naver.com');">
+        네이버 replace 이동
+    </button>
+    <hr/>
+    <a href = "javascript:location.href='04_history.html';">
+        a 내부파일 이동 href
+    </a>
+    <a onclick="location.replace('04_history.html')">
+        a 내부파일 이동 replace
+    </a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>js_ex_04</title>
+    <script>
+        let sum = 0;
+        for(let x=1; x<=100; x++){
+           if(x % 2 == 1){
+               sum +=x;
+           }
+        }document.write(`홀수 합계 : ${sum} <br/>`);
+        
+        sum = 0;
+        for(let x=1; x<=100; x++){
+            if(x % 2 == 0){
+                sum += x; 
+            }
+        }document.write(`짝수 합계 : ${sum} <br/>`);
+
+        sum = 0;
+        for(let x=1; x<=100; x++){
+            sum +=x;
+        } document.write(`전체 합계 : ${sum}`);
+    </script>
+</head>
+<body>
+</body>
+</html>

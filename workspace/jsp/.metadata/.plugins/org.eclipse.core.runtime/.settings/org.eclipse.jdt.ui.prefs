@@ -1,0 +1,12 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Iterable"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="java.lang.Exception"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="java.lang.Throwable"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="java.sql.SQLException"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="util.Criteria"><rhs name\="util.Criteria"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="javax.servlet.http.Cookie"/><rhs name\="javax.mail.internet.InternetAddress"/></lhs><lhs name\="javax.servlet.http.Cookie"><rhs name\="javax.servlet.http.Cookie"/></lhs><lhs name\="javax.mail.Authenticator"><rhs name\="test.GoogleMailTestServlet$MyAuthentication"/><rhs name\="utils.GoogleAuthentication"/></lhs><lhs name\="test.GoogleMailTestServlet$MyAuthentication"><rhs name\="test.GoogleMailTestServlet$MyAuthentication"/></lhs><lhs name\="javax.mail.Address"><rhs name\="javax.mail.internet.InternetAddress"/></lhs><lhs name\="javax.mail.internet.InternetAddress"><rhs name\="javax.mail.internet.InternetAddress"/></lhs><lhs name\="javax.mail.Message$RecipientType"><rhs name\="javax.mail.Message$RecipientType"/></lhs><lhs name\="utils.GoogleAuthentication"><rhs name\="utils.GoogleAuthentication"/></lhs><lhs name\="beans.NoticeVO"><rhs name\="beans.NoticeVO"/></lhs></history>
+content_assist_number_of_computers=17
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

@@ -1,0 +1,36 @@
+<!-- 06_window_open.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>팝업창 만들기</title>
+    <script>
+        let child;
+        function 새창열기(){
+            // open은 기본값이 _blank로 지정되어 있어서 생략 가능
+            child = window.open('./03_location.html','_blank','width=300, height=300, top=100, left=100, resizable=no, scrollbars=no, titlebar=yes, locations=no'); // 위치는 사용자 기준에 어디에 표시 할껀지 정해 주는거임
+            /*  해당값들은 브라우저마다 지원이 다 다름 
+            cf) 크롬은 앵간해선 지원안함
+                esizable: 크기 조절 여부
+                scrollbars : 스크롤 바 생성 여부
+                titlebar :  제목 여부
+                locations : 주소표시줄 표시 여부
+            */
+        }
+
+        function windowClose(){
+            // 해당 window를 종료
+            child.close();
+        }
+
+        /* a태그로 여는거랑 window.open은 완전 다른거임
+            a태그의 새창은 서로 별개의 창으로 열리는거
+            window.open은 자식 부모 관계임
+        */
+    </script>
+</head>
+<body>
+    <input type="button" onclick="새창열기();" value="새창 열기" />
+    <input type="button" onclick="windowClose();"value="창 닫기" />
+</body>
+</html>

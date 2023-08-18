@@ -1,0 +1,46 @@
+ul.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+ul.flex li{
+    list-style: none;
+    flex-grow : 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: 1px solid white;
+    border-right: none;
+    padding: 10px 0;
+    box-sizing: border-box;
+    flex-basis: 0;
+    /* padding값이랑 box-sizing, flax-basiss 안하고 제출함 
+    
+    flex-basis값을 0으로 해야 각 박스 크기 값이 동일해진다.
+    */
+}
+ul.flex li:last-child{
+    border-right: 1px solid white;
+}
+ul.flex li a{
+    text-decoration: none;
+    color: #fafafa;
+}
+ul.flex li:hover{
+    background-color: #fafafa;
+}
+ul.flex li:hover a{
+    color:gray;
+}
+
+header{
+    padding: 10px;
+}
+
+header > nav{
+    padding-top : 10px;
+}

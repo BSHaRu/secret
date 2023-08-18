@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\121\Desktop\pj_final"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\black5415"/>
+			<item value="C:\Users\121\Desktop\black5415"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\project_black"/>
+			<item value="C:\Users\121\Desktop\project_black"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\pj_bj"/>
+			<item value="C:\Users\121\Desktop\pj_bj"/>
+			<item value="C:\Users\121\Desktop\bj_game"/>
+			<item value="C:\Users\121\Desktop\oh"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\black"/>
+			<item value="C:\Users\121\Desktop\Server_Client"/>
+			<item value="C:\Users\121\Desktop\blackjack\blackjack"/>
+			<item value="C:\Users\121\Desktop\블랙잭\blackjack"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\121\Desktop\workspace\javafx\pj_black_server"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\pj_black_client"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\black_client_test"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\black_client1"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\5959"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\black5415"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\project_black"/>
+			<item value="C:\Users\121\Desktop\workspace\javafx\pj_bj"/>
+			<item value=""/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\121\Desktop\blackjack\blackjack.zip"/>
+		</list>
+	</section>
+</section>

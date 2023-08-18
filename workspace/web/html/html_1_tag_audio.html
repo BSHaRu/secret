@@ -1,0 +1,17 @@
+<!-- html_1_tag_audio.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>audio</title>
+</head>
+<body>
+    <!-- 음악 재생 태그 -->
+    <audio src="../media/Kalimba.mp3" autoplay controls muted></audio>
+    <!-- controls가 없으면 출력 도구가 없기 때문에 꼭 넣어줘야 재생가능 -->
+    <audio controls="controls">
+        <source src="../media/Kalimba.ogg" type="audio/ogg" />
+        <source src="../media/Kalimba.mp3" type="audio/mp3" />
+    </audio>
+</body>
+</html>

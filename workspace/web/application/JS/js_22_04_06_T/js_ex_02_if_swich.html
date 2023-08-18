@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>js_ex_02</title>
+    <script>
+        let input = prompt("성별을 입력하세요!(남성 또는 남 그리고 여성 또는 여)");
+        if(input == "여성" || input == "여"){
+            document.write("여자 화장실은 오른쪽입니다.");
+        }else if(input == "남성" || input == "남"){
+            document.write("남자 화장실은 왼쪽입니다.");
+        }else{
+            document.write("화장실을 찾을 수 없습니다.");
+        }
+
+        // switch문
+        switch(input){
+            case "남성" : case "남" :
+                alert("남자 화장실은 왼쪽입니다.");
+                break;
+            case "여성" : case "여" :
+                alert("여자 화장실은 오른쪽입니다.");
+                break;
+            default : alert("화장실을 찾을 수 없습니다.");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,39 @@
+header nav{
+    padding : 10px;
+    margin : 10px;
+}
+header nav ul{
+    padding: 0; /* list는 기본적으로 padding이 존재하기 때문에 0으로 만듬 */
+    list-style: none;
+    display: flex;
+    flex-direction: row; 
+}
+
+header nav ul li{
+    border: 1px solid white;
+    border-right: none;
+    background-color: gray;
+    padding : 10px 0;
+    flex-grow: 1;
+    text-align: center;
+    flex-basis: 100px;
+    /* flex-basis는 부모가 flex일때만 컨텐츠가 동일한 값으로 조절 하는 친구임
+    여기에 임의값을 넣어줌으로써 flex-grow를 통해 컨텐츠가 동일한 크기로 바뀌게 됨
+    -> flex-grow는 기본 컨텐츠 크기 기준으로 남는 여백에 추가적으로 더해주는 친구라서
+    flex-basis에 임의의 값을 지정해서 컨텐츠 크기를 동일하게 바꿔주게 되는거임
+    */
+}
+header nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+header nav ul li:last-child{
+    border-right : 1px solid white;
+}
+header ul li:hover{
+    background-color: white;
+    cursor: pointer;
+}
+header ul li:hover a{
+    color : gray;
+}

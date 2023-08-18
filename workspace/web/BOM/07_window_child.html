@@ -1,0 +1,27 @@
+<!-- 07_window_child.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>child window</title>
+    <script>
+    </script>
+</head>
+<body>
+    <h1>Child Window</h1>
+    <input type="text" id="inputData"/>
+    <hr/>
+    <input type="button" value="가져오기" id="btn">
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.onclick = function(){
+            let inputData = document.getElementById("inputData");
+            // opener - 부모 window
+            console.log(opener); // 이걸로 부모창을 접근 가능하다는걸 알수있음
+            let sendData = opener.document.getElementById("sendData");
+            inputData.value = sendData.value;
+        }
+    </script>
+</body>
+</html>

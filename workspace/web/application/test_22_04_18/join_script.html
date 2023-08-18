@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        *{
+            margin: 10px auto;
+            padding: 0 15px;
+        }
+
+        table{
+            width: 400px;
+            height: 100px;
+            background-color: #fafafa;
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        table th{
+            height: 50px;
+            color: #121212;
+            font-size: 30px;
+        }
+        table .text{
+            text-align: right;
+            padding : 5 10px;
+        }
+
+        table input{
+            padding: 0;
+        }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">회원가입</th>
+        </tr>
+        <tr>
+            <td class="text">아이디</td>
+            <td>
+                <input type="text" id="id" name="id" required />
+            </td>
+        </tr>
+        <tr>
+            <td class="text">비밀번호</td>
+            <td>
+                <input type="password" id="pw" name="pw" required />
+            </td>
+        </tr>
+        <tr>
+            <td class="text">비밀번호확인</td>
+            <td>
+                <input type="password" id="pw2" name="pw2" required />
+            </td>
+        </tr>
+        <tr>
+            <td class="text">생년월일</td>
+            <td>
+                <input type="number" id="bt" name="bt" required />
+            </td>
+        </tr>
+        <tr>
+            <td class="text">이름</td>
+            <td>
+                <input type="text" id="name" name="my_name" required />
+            </td>
+        </tr>
+        <tr>
+            <td class="text">전화번호</td>
+            <td>
+                <input type="number" id="tel" name="tel1" required />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" id="btn" value="회원가입" />
+                <input type="button" id="btn2" value="정보수정" />
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let id = $("#id");
+        let pw = $("#pw");
+        let pw2 = $("#pw2");
+        let bt = $("#bt");
+        let name = $("name");
+        let tel = $("tel");
+
+        // jqurey로 하면 .value가 아니라 .val() 함수로 써야됨
+        // -> 해당값은 undifinded라서 null이 아니라 ""공백으로 설정시켜줘야됨
+        $("#btn").on("click",function(){
+            if(id.val() == ""){
+                alert("아이디를 입력하세요.");
+                id.focus();
+                return false;
+            }
+            if(pw.val() == "" ){
+                alert("비밀번호를 입력하세요.");
+                pw.focus();
+                return false;
+            }            
+            if(pw2.val() == ""){
+                alert("비밀번호를 입력하세요.");
+                pw2.focus();
+                return false;
+            }
+            // if(bt.val() == ""){
+            //     alert("생일을 입력하세요.");
+            //     bt.focus();
+            //     return false;
+            // }
+            // if(name.val() == ""){
+            //     alert("이름을 입력하세요.");
+            //     id.focus();
+            //     return false;
+            // }
+            // if(tel.val() == ""){
+            //     alert("전화번호를 입력하세요.");
+            //     tel.focus();
+            //     return false;
+            // }
+
+            if(pw.val() != pw2.val()){
+                alert("비밀번호가 틀렸습니다.");
+                console.log(pw.val());
+                console.log(pw2.val());
+                pw.val("");
+                pw2.val("");
+                pw.focus();
+                return false;
+            }
+            alert("회원가입 완료");
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- 11_quiz_array_function.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>배열3 - 함수</title>
+    <script src = "11_quiz_array_function.js" type="text/javascript"></script>
+    <script>
+        const STUDENT_NUM = 3;
+        let max, min, total, avg;
+        let aScores = [];
+        aScores = inputScore(aScores, STUDENT_NUM, "A");
+        console.log(aScores);
+
+        max = maxScore(aScores);
+        min = minScore(aScores);
+        total = totalValue(aScores);
+        avg = average(total, STUDENT_NUM);
+        document.write(`A max : ${max} <br/>`);
+        document.write(`A min : ${min} <br/>`);
+        document.write(`A total : ${total} <br/>`);
+        document.write(`A avg : ${avg} <br/>`);
+        document.write("<hr/>");
+
+        // B 점수
+        let bScores = new Array();
+        bScores = inputScore(bScores, STUDENT_NUM, "B");
+        console.log(bScores);
+        max = maxScore(bScores);
+        min = minScore(bScores);
+        total = totalValue(bScores);
+        avg = average(total, STUDENT_NUM);
+        document.write(`B max : ${max} <br/>`);
+        document.write(`B min : ${min} <br/>`);
+        document.write(`B total : ${total} <br/>`);
+        document.write(`B avg : ${avg} <br/>`);
+        document.write("<hr/>");
+    </script>
+</head>
+<body>
+</body>
+</html>

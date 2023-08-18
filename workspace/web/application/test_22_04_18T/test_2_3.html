@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        article{
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid black;
+        }
+        article table{
+            width: 100%;
+        }
+        article table tr td:first-child{
+            text-align: right;
+        }
+        article table tr:last-child td{
+            text-align: center;
+        }
+        article table tr:first-child td{
+            height: 80px;
+            /* text-align: center; */
+        }
+        article table tr td{
+            height: 40px;
+        }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            let acceptBtn = document.getElementById('acceptBtn');
+            let input = document.getElementsByTagName('input');
+
+            acceptBtn.addEventListener("click",function(){
+                // 반복문
+                let upw = null; // 초기화 안시켜주면 반복문 안에 upw값이 그대로 남아 있기 때문에 여기서 null 값을 주는 거임
+                for(let i=0; i<input.length; i++){
+                    console.log(input[i]);
+                    if(!input[i].value){ // input[i].value == "" 이랑 동일
+                        alert(input[i].alt+"를 확인해주세요");
+                        input[i].focus();
+                        return;
+                    }
+
+                    if(input[i].id == "upw") upw = input[i]; // if문에 1개만 실행되면 스페이스 하나 넣고 {} 생략가능
+
+                    if(input[i].id == "repw" && upw.value != input[i].value){
+                        alert("비밀번호가 일치하지 않습니다.");
+                        upw.value = "";
+                        input[i].value ="";
+                        upw.focus();
+                        return;
+                    }  
+                }
+                alert("회원가입 완료");
+
+                /* 노가다 하지말고 반복문으로 만들자.(이렇게해도 되긴됨)
+                let uid = document.getElementById("uid");
+                if(uid.value ==""){
+                    alert("아이디를 입력해주세요.");
+                    uid.focus();
+                    return;
+                }
+
+                let upw = document.getElementById("upw");
+                if(upw.value ==""){
+                    alert("비밀번호를 입력해주세요.");
+                    upw.focus();
+                    return;
+                }
+
+                let repw = document.getElementById("repw");
+                if(repw.value ==""){
+                    alert("비밀번호확인을 입력해주세요.");
+                    repw.focus();
+                    return;
+                }
+
+                if(upw.value != repw.value){
+                    alert("비밀번호가 일치하지 않습니다.");
+                    upw.value ="";
+                    repw.value="";
+                    upw.focus();
+                    return;
+                }       
+                */         
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <!-- article>form>table>(tr>td*2)*8 -->
+    <article>
+        <form>
+            <table>
+                <tr>
+                    <tr colspan="2">
+                        <h1>회원가입</h1>
+                    </tr>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="text" id="uid" alt="아이디" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" id="upw" alt="비밀번호" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호확인</td>
+                    <td>
+                        <input type="password" id="repw" alt="비밀번호확인" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>
+                        <input type="text" id="ubirth" alt="생년월일" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input type="text" id="uname" alt="이름" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="text" id="uphone" alt="전화번호" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" id="acceptBtn" value="회원가입">
+                        <input type="button" value="회원정보수정">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </article>
+</body>
+</html>

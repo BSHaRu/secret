@@ -1,0 +1,38 @@
+<!-- 06_dom_mod_attribute.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+    </script>
+</head>
+<body>
+    <!-- 다시 이해 할 필요가 있음 -->
+    <img src="../img/iu.png" data-shortIu="../img/iu.png" data-longIu="../img/iu2.jpg" alt="iu" id="image" width="300" height="300" />
+    <input type="button" onclick="changeImage();" value="눌러보세요" />
+    <input type="button" onclick="changeImg();" value="눌러보세요" />
+    
+    <script>
+        let image = document.getElementById("image");
+        console.log(image.src);
+        console.log(image.width);
+        console.log(image.height);
+
+        function changeImage(){
+            image.src = "../img/iu2.jpg";
+            image.width = "400";
+            image.height = "400";
+        }
+
+        function changeImg(){
+            let iu = image.getAttribute("data-shortIu");
+            console.log(iu);
+            let iu2 = image.getAttribute("data-longIu");
+            console.log(iu2);
+            console.log(image.dataLongIu); // 이건 제대로 안뜨는게 맞음
+            image.setAttribute("data-rice","../img/rice.png");
+        }
+    </script>
+</body>
+</html>

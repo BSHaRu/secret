@@ -1,0 +1,59 @@
+<!-- table 활용한 회원가입 -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>test4</title>
+</head>
+<body>
+    <table border="1" >
+        <tr>
+            <th colspan="8">회원가입</th>
+        </tr>        
+
+        <tr>
+            <td>이메일</td>
+            <!-- <td><input type="text" name="email" value="이메일" readonly /></td> -->
+            <td><input type="email" value="neo.naver.com" required /> </td>
+        </tr>       
+
+        <tr>
+            <td>이름</td>
+            <!-- <td><input type="text" name="id" value="이름" readonly /></td> -->
+            <td><input type="name" value="네오" required /></td>
+        </tr>        
+
+        <tr>
+            <td>비밀번호</td>
+            <!-- <td><input type="text" name="pw" value="비밀번호" readonly /></td> -->
+            <td><input type="password" value="비밀번호" required /></td>
+        </tr>       
+
+        <tr>
+            <td>비밀번호 확인</td>
+            <!-- <td><input type="text" name="pw2" value="비밀번호 확인" readonly /></td> -->
+            <td><input type="password" value="비밀번호" required /></td>
+        </tr>        
+
+        <tr>
+            <td>성별</td>
+            <!-- <td><input type="text" name="sex" value="성별" readonly /></td> -->
+            <td>
+                <input type="radio" name="sex" value="남성" />남성
+                <input type="radio" name="sex" value="여성" checked />여성 
+            </td>
+        </tr>       
+        
+        <tr>
+            <td>나이</td>
+            <!-- <td><input type="text" name="age" value="나이" readonly /></td> -->
+            <td><input type="number" name="age" placeholder="숫자를 입력하세요" /> </td>
+        </tr>       
+
+        <tr>
+            <td colspan="2" align="center"><input type="button" value="제출" /></td>
+        </tr>       
+
+    </table>
+</body>
+</html>

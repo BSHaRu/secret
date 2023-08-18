@@ -1,0 +1,63 @@
+<!-- 01_document2.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        let id = document.getElementById("selectId");
+        console.log(id);
+        // 위에는 적용 안되는게 맞음
+    </script>
+</head>
+<body>
+    <!-- 
+        input:text.tagClass#selectId[value=$ tabindex=$]*5 + input:button.tagClass#selectId[value='button'] 
+    -->
+    <input type="text" id="selectId" class="tagClass" value="1" tabindex="1">
+    <input type="text" id="selectId" class="tagClass" value="2" tabindex="3">
+    <input type="text" id="selectId" class="tagClass" value="3" tabindex="2">
+    <input type="text" id="selectId" class="tagClass" value="4" tabindex="4">
+    <input type="text" id="selectId" class="tagClass" value="5" tabindex="5">
+    <input type="button" value="button" class="tagClass" id="selectId">
+
+    <script>
+        /* 단일 선택자
+            getElementById : id값을 사용
+            querySelector : css 선택자 이용
+        */
+
+        // getElementById : id값으로 요소를 검색하여 제일 먼저 검색된 한개의 요소를 가지고 옴.
+        id = document.getElementById("selectId");
+        console.log(id);
+
+        id.value = "홍길동";
+
+        document.write("getElementById : "+id.value+"<br/>");
+
+        // querySelector : css 선택자를 이용하여 가장 먼저 검색되는 한개의 요소를 가지고 옴
+        let selector = document.querySelector(".tagClass");
+        document.write(`querySelector : ${selector.value} <br/>`);
+
+        /*  다수 선택자 : 배열로 정리 -> return값이 배열임
+            getElementsByTagName : name은 보통 1페이지에 1개 밖에 안씀
+            getElementsByClassName : 디자인 하는 애들이 이걸 많이씀
+            querySelectorAll : css 다수의 동일한 선택자를 불러올때 사용
+        */
+        let tagArray = document.getElementsByTagName("input");
+        
+        for(let i = 0; i < tagArray.length; i++){
+            document.write(`${i}번째 tagArray : ${tagArray[i].value} <br/>`);
+        }
+
+        //class 속성값이 tagClass인 모든 tag요소를 가지고옴
+        let classArray = document.getElementsByClassName("tagClass");
+        console.log(classArray);
+
+        //선택자를 이용하여 동일 선택자에 검색된 모든 tag요소를 가지고옴
+        // input[type='text']인 모든 tag 요소
+        let selectorAll = document.querySelectorAll("input[type='text']");
+        console.log(selectorAll);
+    </script>
+</body>
+</html>

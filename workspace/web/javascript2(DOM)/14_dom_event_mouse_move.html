@@ -1,0 +1,36 @@
+<!-- 14_dom_event_mouse_move.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        function mouseOver(obj){
+            obj.style.border="1px solid black";
+            obj.style.cursor = "pointer";
+            console.log("mouse over!");
+        }
+
+        window.onload = function(){
+
+            document.body.onmousemove = function(event){ 
+                let position = "x : "+event.pageX+", y : "+event.pageY; // 마우스를 움직였을 때 마우스의 x,y 좌표 확인한다.
+                document.getElementById("pTag").innerHTML = position;
+            }
+        } // body 내부 안에서 움직일 경우 x,y좌표값을 보여줌
+    </script>
+</head>
+<body>
+    <p id="pTag"></p>
+    <!-- 이벤트 전파 - 버블링 
+        - mouseover(:hover랑 같은거)를 했을 경우 안쪽의 컨텐츠(?)까지 영향을 받는것
+    => 노란색 박스에만 적용 시켰지만, 마우스가 노란색 박스 안에 있는 빨간색 박스까지 mouseover값을 적용 시킴
+        - mouseenter를 하게되면 노란색 박스만 적용되고 빨간색 박스는 적용안됨
+    -->
+    <!-- <div onmouseover="mouseOver(this);" style="background-color: yellow; width: 300px; height: 100px; padding:10px;"></div> -->
+    <div onmouseenter="mouseOver(this);" style="background-color: yellow; width: 300px; height: 100px; padding:10px;">
+        <div style="width: 250px; height:70px; background-color: red;"></div>
+    </div>
+    
+</body>
+</html>

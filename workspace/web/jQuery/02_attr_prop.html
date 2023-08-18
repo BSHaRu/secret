@@ -1,0 +1,35 @@
+<!-- 02_attr_prop.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            // 문서가 준비 완료 되었을 때 해당 함수 실행
+            // button tag에 click이벤트를 발생했을 때 해당 함수 실행 
+            $("button").click(function(){
+                let value = $("#iu").attr("src");
+                alert(value);
+            }); // 해당 값의 HTML속성을 알려줌 - ""../img/iu.png"
+
+            $("#propValue").click(function(){
+                let value = $("#iu").prop("src");
+                alert(value);
+            }); // 해당 값의 실제 위치를 알려줌 - "URL 주소를 알려줌"
+
+            $("#iu").click(function(){
+                $("#iu").attr("src","../img/iu2.jpg"); // 속성 변경 or 속성 부여
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="../img/iu.png" alt="아이유" id="iu" width="300" height="300" />
+    <button>attr 출력</button>
+    <button id = "propValue">prop 출력</button>
+</body>
+</html>

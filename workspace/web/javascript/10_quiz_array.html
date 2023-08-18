@@ -1,0 +1,33 @@
+<!-- 10_quiz_array.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>배열1</title>
+    <script>
+        let aScores = []; // let aScores = new Array(); 동일
+        let max, min;
+        const STUDENT_NUM = 5; // 상수는 변하면 안되기에 대문자로 표기
+
+        for(let index = 0; index < STUDENT_NUM; index++){
+            let score = prompt(index+"번째 학생의 점수를 입력해 주세요.");
+            aScores[index] = parseInt(score);
+        }
+        console.log(aScores);
+        
+        max = min = aScores[0];
+        for(let i = 1; i < aScores.length; i++){ // i < STUDENT_NUM; 상관x
+            if(aScores[i] > max){
+                max = aScores[i];
+            }
+            if(aScores[i] < min){
+                min = aScores[i];
+            }   
+        }
+        document.write(`max score : ${max}<br/>`);
+        document.write(`min score : ${min}<br/>`);
+    </script>
+</head>
+<body>
+</body>
+</html>

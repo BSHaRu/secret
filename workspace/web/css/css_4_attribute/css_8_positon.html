@@ -1,0 +1,58 @@
+<!-- css_8_positon.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        .box1{
+            position: static; /* 대부분 static(2차원 배치)이 생략되어있다 */ 
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            margin-bottom: 50px;
+        }
+
+        .absolute_parent{
+            position:absolute;
+            position: static;
+            position: relative;
+            margin-top: 100px;
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+        }
+
+        .absolute_child{
+            position: absolute;
+            /* top / right / left / bottom */
+            top:100px;
+            left:100px;
+            /* 부모가 3차원이면 부모 기준으로 좌표가 생성됨 
+            부모가 2차원이면 브라우저 기준으로 좌표가 생성
+            */
+
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        .fixed{
+            position: fixed;
+            top:50px;
+            right: 20px;
+            
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="absolute_parent">
+        <div class="absolute_child"></div>
+    </div>
+    <div class="fixed"></div>
+</body>
+</html>

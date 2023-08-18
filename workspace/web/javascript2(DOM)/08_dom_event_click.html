@@ -1,0 +1,64 @@
+<!-- 08_dom_event_click.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        // 2번째 방법의 함수
+        function changeColor(color){
+            document.body.style.backgroundColor = color;
+        }
+
+        // 3번째 방법
+    // onload : 브라우저 문서가 모두 출력되고 준비되었을 때 해당구문 실행시켜라
+        window.onload = function(){
+            let pink = document.getElementById("pink");
+            
+            pink.onclick = function(){
+                // document.body.style.backgroundColor = "pink";
+                document.body.style.backgroundColor = pink.id; // id가 pink라서 둘다 적용이 됨.
+            }
+        }
+
+        // 4번째 방법
+        window.onload = function(){
+            let orangeTag = document.querySelector("#orange");
+            
+            orangeTag.addEventListener('click',function(){
+                console.log(this); // this값 : 이벤트가 발생한 객체 => orange
+                document.body.style.backgroundColor = this.id;
+            });
+        }
+    </script>
+</head>
+<body>
+    <!-- (label>input:radio)*4 -->
+    <!-- name값이 동일하면 단일 클릭만 된다 -->
+    <label>
+        <!-- 1번째 방법 : 여기에 바로 해당 요소 집어넣기 -->
+        <input type="radio" name="r1" onclick="document.body.style.backgroundColor='lightblue';" id="">
+        lightblue
+    </label>
+
+    <label>
+        <!-- 2번째 방법 : 위에 script에 함수 쓰기 -->
+        <input type="radio" name="r1" onclick="changeColor('lightgreen');" id="">
+        lightgreen
+    </label>
+
+    <label>
+        <input type="radio" name="r1" id="pink">
+        pink
+    </label>
+
+    <label>
+        <input type="radio" name="r1" id="orange">
+        orange
+    </label>
+
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- 02_screen.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+    window.onload = function(){
+
+        // window.screen
+        let widthWin = screen.availWidth;
+        let heightWin = screen.availHeight;
+        console.log("사용가능한 화면 너비 : " +widthWin);
+        console.log("사용가능한 화면 높이 : " +heightWin);
+        
+        let width = screen.width;
+        let height = screen.height;
+        console.log("화면 너비 : " +width);
+        console.log("화면 높이 : " +height);
+        // 여기서 높이가 차이나는 이유는 작업표시줄의 40px이 잡혀 있기때문이다.
+
+        width = document.body.clientWidth;
+        height = document.body.clientHeight;
+        console.log("문서 안쪽의 너비 : "+width);
+        console.log("문서 안쪽의 높이 : "+height);
+    }
+
+    let i = 0;
+    window.onscroll = function(){
+        // y scroll 위치 정보
+        let wy = window.scrollY;
+        console.log("y scroll 시작 좌표 : "+wy)
+        let dh = document.body.clientHeight;
+        console.log("문서의 전체 높이 : "+dh);
+        let wh = window.screen.height;
+        console.log("브라우저가 출력할 수 있는 최대 높이 : "+wh);
+        let scrollHeight = wy + wh;
+        console.log(`scroll 위치 : ${scrollHeight}`);
+
+        if(scrollHeight >= dh){
+            console.log("body에 추가");
+            let elem = document.createElement("div");
+            elem.style.height = "500px";
+            elem.style.border = "1px solid black";
+            elem.innerHTML = "<h1>"+i+"</h1>";
+            document.body.appendChild(elem);
+            i++;
+        } // 스크롤을 계속 내릴 때마다 새로운 컨텐츠들이 생겨나게 하는것
+        // ex) youtube에서 스크롤 계속 내리면 새로운 애들 계속 생김
+    }
+    </script>
+</head>
+<body>
+    <div style="height:1600px; width:100%; border: 1px solid red;"></div>
+</body>
+</html>

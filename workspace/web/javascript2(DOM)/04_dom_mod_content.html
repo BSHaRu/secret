@@ -1,0 +1,45 @@
+<!-- 04_dom_mod_content.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div id="content">
+        <span style="color:red">         red      </span>
+    </div>
+    <!-- 
+        innerHTML : 태그를 인식함
+        textContent : 태그 인식 안하고 textContent만 보여줌
+        innerText : 공백이 아무리 많아도 1칸만 인식해서 보여줌(trim 적용)
+        -> text 두개 다 사용자한테 보여지는건 똑같음
+        => 03_dom_mod_text.html 참고
+    -->
+    <input type="text" id="text" />
+    <button id="html" onclick="getHTML();">innerHTML</button>
+    <button id="innerText" onclick="getText();">innerText</button>
+    <button id="textContent" onclick="tc();">textContent</button>
+
+    <script>
+        function getHTML(){
+            // content = <div id="content">dummy</div>
+            let content = document.getElementById("content");
+            let val = content.innerHTML;
+            console.log(`val : ${val}`);
+        }
+
+        function getText(){
+            let val = document.querySelector("#content").innerText;
+            /* let content = document.querySelector("#content");
+               let val = content.innerText; 랑 동일한 결과임     */
+            console.log(`innerText : ${val}`);
+        }
+
+        function tc(){
+            let val = document.getElementById("content").textContent;
+            console.log(`textContent : ${val}`);
+        }
+    </script>
+</body>
+</html>

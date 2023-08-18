@@ -1,0 +1,55 @@
+<!-- 10_struct_selector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        li{
+            /* list item의 type 속성 제어 */
+            list-style: none;
+            float:left;
+            background-color: skyblue;
+            padding:15px;
+        }
+
+        li:first-child{
+        /* 왼쪽 모서리부터 시계방향 순서대로 진행됨 */
+            border-radius: 10px 0 0 10px;
+        }
+
+        li:last-child{
+            border-radius: 0 10px 10px 0;
+        }
+
+        li > a {
+            /* a태그의 기본적으로 들어가는 밑줄 사용x */
+            text-decoration: none; 
+            /* a태그의 밑줄을 위에 사용 */
+            text-decoration: overline;
+            color: #fafafa;
+        }
+
+        li:nth-child(2n){
+            background-color: pink;
+        }
+
+        li:nth-child(even){
+            cursor:zoom-in;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- ul>li*7>a{$번째} -->
+    <ul>
+        <li><a href="">1번째</a></li>
+        <li><a href="">2번째</a></li>
+        <li><a href="">3번째</a></li>
+        <li><a href="">4번째</a></li>
+        <li><a href="">5번째</a></li>
+        <li><a href="">6번째</a></li>
+        <li><a href="">7번째</a></li>
+    </ul>
+</body>
+</html>

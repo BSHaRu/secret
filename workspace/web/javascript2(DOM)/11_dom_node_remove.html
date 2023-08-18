@@ -1,0 +1,44 @@
+<!-- 11_dom_node_remove.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <!-- div#target>(p#p${$번째 단락})*7 -->
+    <div id="target">
+        <p id="p1" onclick="rmElem(this);">1번째 단락</p>
+        <p id="p2" onclick="rmElem(this);">2번째 단락</p>
+        <p id="p3" onclick="rmElem(this);">3번째 단락</p>
+        <p id="p4" onclick="rmElem(this);">4번째 단락</p>
+        <p id="p5" onclick="rmElem(this);">5번째 단락</p>
+        <p id="p6" onclick="rmElem(this);">6번째 단락</p>
+        <p id="p7" onclick="rmElem(this);">7번째 단락</p>
+    </div>
+    <button onclick="removeFirst();">첫번째 요소 삭제</button>
+    <button onclick="removeLast();">마지막 요소 삭제</button>
+
+    <script>
+        function removeFirst(){
+            let parent = document.getElementById("target");
+            let childs = document.querySelectorAll("#target > p");
+            let first = childs[0];
+            parent.removeChild(first);
+        }
+
+        function removeLast(){
+            let parent = document.getElementById("target");
+            let childs = document.querySelectorAll("#target > p");
+            console.log(childs.length);
+            let last = childs[childs.length-1];
+            parent.removeChild(last);
+        }
+
+        function rmElem(elem){ // elem 매개변수는 위의 this를 받고 this는 해당 p태그의 id값을 받음
+            console.log(elem);
+            elem.remove();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        let sum1 = 0;
+        let sum2 = 0;
+        for(let x = 100; x > 0; x--){
+            if(x % 2 == 0){
+                sum1 += x;
+            }else{
+                sum2 += x;
+            }
+        }
+        document.write(`짝수합계 : ${sum1}<br/>`);
+        document.write(`홀수합계 : ${sum2}<br/>`);
+        document.write(`전체합계 : ${sum1+sum2}<br/>`);
+    </script>
+</head>
+<body>
+</body>
+</html>

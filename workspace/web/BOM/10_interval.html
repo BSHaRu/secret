@@ -1,0 +1,38 @@
+<!-- 10_interval.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        let id;
+        function changeColor(){
+            id = setInterval(flashText,500); // 0.5초마다 flashText를 실행
+        }
+
+        function flashText(){
+            let elem = document.getElementById("target");
+            /* if(elem.style.color == "red"){
+                elem.style.color = "blue";
+            }else{
+                elem.style.color = "red";
+            } */
+            elem.style.color = (elem.style.color == "red") ? "blue" : "red";
+        /* 삼항 연산자 : (조건식) ? 참(true) : 거짓(false);
+        elem.style.color이게 red(참)면 blue를 대입하고 거짓이면 red를 대입해라
+        */
+            // 위에 if문이랑 동일한 의미이다.
+        }
+
+        function stopTextColor(){
+            window.clearInterval(id);
+        }
+    </script>
+</head>
+<body onload="changeColor();">
+    <div id="target">
+        <p>this is paragraph</p>
+    </div>
+    <button onclick="stopTextColor();">stop</button>
+</body>
+</html>

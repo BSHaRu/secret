@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<AnchorPane fx:controller="c2_input.InputController"
+prefHeight="380.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="14.0" layoutY="34.0" text="제목" />
+      <Label layoutX="14.0" layoutY="71.0" text="비밀번호" />
+      <Label layoutX="14.0" layoutY="108.0" text="공개" />
+      <Label layoutX="14.0" layoutY="143.0" text="내용" />
+      <Separator layoutX="14.0" layoutY="320.0" prefHeight="0.0" prefWidth="379.0" />
+      <TextField fx:id="txtTitle" layoutX="66.0" layoutY="30.0" prefHeight="23.0" prefWidth="319.0" />
+      <PasswordField fx:id="txtPass" layoutX="66.0" layoutY="67.0" />
+      <ColorPicker fx:id="colorPicker" layoutX="226.0" layoutY="67.0" prefHeight="23.0" prefWidth="156.0" />
+      <ComboBox fx:id="comboPublic" promptText="선택하세요." layoutX="66.0" layoutY="104.0" prefHeight="23.0" prefWidth="138.0" >
+      	<items>
+      		<FXCollections fx:factory="observableArrayList"> <!-- factory : 일반적으로 정적메소드를 의미함 -->
+      			<String fx:value="공개" />
+      			<String fx:value="비공개" />
+      		</FXCollections>
+      	</items>
+      </ComboBox>
+      <DatePicker fx:id="datePicker" layoutX="226.0" layoutY="104.0" prefHeight="23.0" prefWidth="156.0" />
+      <TextArea fx:id="txtContent" layoutX="14.0" layoutY="169.0" prefHeight="131.0" prefWidth="372.0" />
+      <Button fx:id="btnReg" layoutX="152.0" layoutY="343.0" mnemonicParsing="false" text="등록" />
+      <Button fx:id="btnCancel" layoutX="216.0" layoutY="343.0" mnemonicParsing="false" text="취소" />
+   </children>
+</AnchorPane>

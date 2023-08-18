@@ -1,0 +1,88 @@
+<!-- html_1_tag_table.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>table</title>
+</head>
+<body>
+    <!-- border 입력안하면 외각선 없는 상태로 정렬-->
+    <table border="1">      
+        <tr>
+            <th></th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <!-- alt + 클릭으로 다수 태그를 한꺼번에 수정 가능함 -->
+        </tr>
+        <!-- tr>td*6 -->
+        <tr>
+            <td>오전</td>
+            <td>국어</td>
+            <td>수학</td>
+            <td>미술</td>
+            <td>체육</td>
+            <td>영어</td>
+        </tr>
+    </table>
+    <br />    
+ <table bgcolor="skyblue" border="1" cellspacing="0" cellpadding="5">
+    <!-- 
+        cellspacing : 셀들 사이에 있는 공간 
+        cellpadding : 셀과 컨텐츠 사이에 있는 공간
+        -> 숫자 : 해당 숫자의 픽셀
+    -->
+      <thead>
+        <tr>
+            <th colspan="4">학생정보</th>
+        </tr>
+    </thead>
+    <!-- tfoot과 thead는 위치를 바꿔도 출력 될 때는
+        thead는 맨위 / tfoot은 맨 밑으로 출력된다
+        ->thead는 머릿글이고 tfoot은 아랫글이기 때문이다.    
+    -->
+    <tbody>
+        <tr>
+            <td bgcolor="8572ee">학번</td>
+            <!-- valign 속성
+                bottom / middle / top
+            -->
+            <td valign="bottom" align="center" width="200" height="50">학생이름</td>
+            <td>전화번호</td>
+            <td rowspan="2">
+                <table border="1" cellspacing="0" cellpadding="2">
+                    <tr>
+                        <td bgcolor="fafafa">비고</td>
+                    </tr>
+                    <tr>
+                        <td>결석</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>10023</td>
+            <td>홍길동</td>
+            <td>01012345678</td>         
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <!-- align 내부 컨텐츠 정렬
+                left / right / center
+            -->
+            <td align= "center" colspan="4">&copy;&nbsp;&nbsp;&nbsp; Hong</td> 
+            <!-- 
+                HTML에서 특수문자 표시는 따로 적용해야됨
+                &copy : 저작권(작성자)가 누군지 표시
+                &nbsp : 스페이스를 표현하는 특수문자
+                ->이 친구를 쓰면 html에서 스페이스 취급을 해줌
+                강의자료 - 교육첨부 - web 폴더에 특수문자 리스트 정리되어있음
+            -->
+        </tr>
+    </tfoot>      
+ </talbe>
+</body>
+</html>

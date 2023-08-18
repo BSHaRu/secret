@@ -1,0 +1,42 @@
+<!-- 05_console.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        // console 탭을 이용해서 개발자가 필요한 정보를 출력
+        window.console.log("기본");
+        let a = "Hello";
+        let b = 3.141592;
+        let c = false;
+        console.log(a+b+c);
+        console.log(a,b,c);
+        // %s는 sting(문자열) , %d는 decimal(정수) %f는 float(실수)를 뜻함
+        console.log("%s는 문자열, %d는 수치형",a,b); // a+"는 문자열, "+b+"는 수치형"; 과 동일
+        console.log("%s는 문자열, %f는 실수",a,b);
+        console.info("정보 log랑 동일하게 출력됨");
+        console.warn("경고!!!!!");          // 노란색 음영 넣어서 경고 표시
+        console.error("오류 발생!!!!!!!!"); // 빨간색 음영 넣어서 오류 표시
+        
+        // 디버깅 또는 퍼포먼스 확인 (연산 시간 확인하는거임)
+        console.time("타이머 1");
+        let sum = 0; 
+        for(let i =0; i <= 100000; i++){
+            if(i % 2 == 0 ){
+                sum+=i;
+            }
+        }
+        console.timeEnd("타이머 1"); // 1ms == 1/1000s
+
+        console.time("타이머 2");
+        sum = 0;
+        for(let i = 2; i <= 100000; i+=2){
+            sum +=i;
+        }
+        console.timeEnd("타이머 2");
+    </script>
+</head>
+<body>
+</body>
+</html>

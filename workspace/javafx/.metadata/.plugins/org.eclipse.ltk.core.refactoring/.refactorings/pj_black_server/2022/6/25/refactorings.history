@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;pj_black_server/src/app/page/BMJUA_ttf.ttf&apos; to &apos;BMJUA.ttf&apos;" description="Rename resource &apos;BMJUA_ttf.ttf&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/app/page/BMJUA_ttf.ttf" name="BMJUA.ttf" stamp="1655336949034" updateReferences="true"/>
+</session>

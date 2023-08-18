@@ -1,0 +1,81 @@
+<!-- 8_action_selector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>반응 선택자</title>
+    <style>
+        h1{
+            color:red;
+        }
+        h1:hover{
+            color:blue;
+            /* 손모양 */
+            cursor:pointer;
+            /* 돋보기 */
+            cursor:zoom-in; 
+            cursor:zoom-out;
+            /* 마우스 포인트 ++모양 */
+            cursor:copy;
+        }
+
+        /* 마우스로 눌렀을 때 색깔 바뀌는거 */
+        h1:active{
+            color:orange;
+        }
+
+        input:enabled{
+            background-color: red;
+            color: #fafafa;
+        }
+
+        input:disabled{
+            background-color: gray;
+            color: #fafafa;
+        }
+
+        input:read-only{
+            background-color: rgb(216, 216, 216);
+            color: rgb(17, 0, 255);
+        }
+
+        input:focus{
+            background-color: #fafafa;
+            color: #121212;
+            /* 외각선 색 */
+            outline-color: #8972ee;
+            /* 선모양 dotted 점선 */
+            outline-style : dotted;
+            /* 선 굵기 */
+            outline-width: 1mm;
+            /* outline과 dorder를 사용 안하겠다. */
+            outline: none;
+            border: none;
+        }
+
+        .accept:checked {
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>반응 선택자</h1>
+    <h2>사용 가능</h2>
+    <input type="text" placeholder="아이디 작성공간"/>
+    <h2>사용 불가능</h2>
+    <input type="text" value="aaa" disabled />
+    <h2>읽기 전용</h2>
+    <input type="text" value="bbb" readonly />
+    <br /> <hr />
+    
+    <input type="checkbox" id="accept" class="accept" />
+    <label for="accept">Test</label>    
+    <!-- for = id값을 입력하면 같이 동작 가능하다. 
+    -> <label>
+            <input type="checkbox" class="accept" /> Test
+        </label>
+        이거랑 출력값이 같다
+    -->    
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        let input = prompt("라인 개수를 입력하세요.");
+
+        // input : 5라고 가정할 때
+        for(let i = 1; i <= input; i++){
+            // 별의 개수 : 1 2 3 4 
+            // 공백 : 4 3 2 1 0
+            for(let j = input; j > i; j--){
+                document.write("&nbsp;");
+            }
+            
+            // i : 1 / 2 / 3 / 4 / 5
+            // 별 개수 : 1 / 3 / 5 / 7 / 9
+            for(let k=1; k <= i*2-1; k++){
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+
+        // 역삼각형 모양 만들기
+        for(let i = input-1; i > 0; i--){
+            // 4 3 2 1 반복
+            for(let j = input-i; j > 0; j--){
+                document.write("&nbsp;");
+            }
+            // i : 4 3 2 1
+            // 별 개수 : 7 5 3 1
+            for(let k = 0; k < i*2-1; k++){
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+
+        document.write("=======================================<br/>");
+
+        let max = input * 2 - 1;
+
+        for(let i = 1; i <= max; i++){
+            if(i <= input){
+                // i 값이 1~5일 때 증가
+                for(let j = input-i; j > 0; j--){
+                    document.write("&nbsp;");
+                }
+                /* i 값 : 1 ~ 5일 때 k 값은
+                    1 * 2 - 1 = 1;
+                    2 * 2 - 1 = 3;
+                    3 * 2 - 1 = 5;
+                    4 * 2 - 1 = 7;
+                    5 * 2 - 1 = 9;
+                */
+                for(let k = i*2-1; k > 0; k--){
+                    document.write("*");
+                }
+            }else{
+                // i값이 6~9일 때 감소
+                // 별 개수 : 7 5 3 1
+                // 공백 수 : 1 2 3 4
+                for(let j = 0; j < i-input; j++){
+                    document.write("&nbsp;");
+                }
+                // max값이 9일 때 i는 6
+                for(let k = (max-i)*2+1; k > 0; k--){
+                    document.write("*");
+                }
+            }
+            document.write("<br/>");
+        }
+
+        document.write("=======================================<br/>");
+
+        // for문안에 초기화식을 2개 이상 지정도 가능하다.
+        for(let i = 1, count =0; i <= max; i++){
+            if(i <= input){
+                ++count; // i값은 1~5 / count는 1~5가 될 것임
+            }else{
+                --count; // i값은 6~9 / count는 4~1이 될 것임
+            }
+
+            for(let j = 1; j <= input-count; j++){
+                document.write("&nbsp;");
+            }
+            for(let k = 1; k <= count *2-1; k++){
+                document.write("*");
+            }
+            document.write("<br/>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- 07_dom_event.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <input type="button" value="확인" id="btn" />
+    <input type="button" value="event 제거" id="removeEvent" />
+    <input type="button" value="Test" onclick="document.write(`btn에 onclick 속성값을 추가`);"/>
+
+    <script>
+        let btn = document.getElementById("btn");
+        // btn.onclick = function(){
+        //     alert("#btn click"); 
+        // } 이건 실행 되는지 확인해보는 용도로 테스트 한거임
+
+        // eventListener(이벤트 감시자) 등록 - ("이벤트 명", 함수)를 넣으면 됨
+        // 이벤트 명은 속성값의 on을 제외한 값 
+        btn.addEventListener("click",function(){ // 클릭을 했을때 함수를 실행
+            alert(`btnClick!!!!!!!!!!!!!!!!!!!!!!!!`);
+        });
+
+        function btnEvent(){
+            document.write("eventListener click");
+        }
+
+// 함수를 매개변수를 쓸때는 btnEvent() 까지 쓰면 함수 호출이라서()는 빼야됨
+        btn.addEventListener('click',btnEvent);
+
+        document.getElementById("removeEvent").onclick = function(){
+            btn.removeEventListener('click',btnEvent);
+        } // event제거 버튼을 누르면 event가 더 이상 발생하지 않음
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- html_1_tag_img.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>img tag</title>
+</head>
+<body>
+    <a href="../test.html">
+        <img border="1" src="../img/intro/logo.png" width="200" title="이미지 로고" align="top"/>
+    </a>
+    <br /> <hr />
+
+    <img border="1" src="../img/intro/logo.png" width="200" title="이미지 로고" align="top"/> 로고 이미지
+    <!-- width만 지정해두면 height지정안해도 width에 맞춰 조정됨
+        title : 해당이미지에 마우스 올려두면 해당 텍스트로 알려줌
+    -->
+    <br />
+    <hr />
+    <img src="../img/intro/logo.png" width="200" title="이미지 로고" align="middle"/> 로고 이미지
+    <br />
+    <hr />
+    <!-- 이미지 경로를 찾지 못할 경우 -->
+    <img src="../../img/into/logo.png" alt="로고 이미지"/>
+    <!-- alt : 해당위치에 이미지가 없을경우 텍스트로 이 이미지가 뭔지 나타내는 용도 -->
+    <br />
+    <!-- 외부에 있는 이미지 출력 -->
+    <img src="http://koreate.net/imgs/retry.png"/>
+</body>
+</html>

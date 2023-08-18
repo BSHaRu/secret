@@ -1,0 +1,50 @@
+<!-- html_1_tag_list.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>list</title>
+</head>
+<body>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+    <hr />
+    <!-- type 지정
+        종류 : 1/a/A/i/I/disc/circle/square 
+        *ul에서 기본값으로 disc로 되어있고,
+        ol에서는 기본값으로 1로 지정되어있다. 
+    -->
+    <!-- ul>li{$}*3 -->
+    <ul type="none">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <hr />
+    <!-- ul[type='square']>li{$}*3 -->
+    <ul type="square">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <hr />
+    <!-- order list 기본 type : 1 -->
+    <ol type="I" reversed> <!-- reversed를 쓰면 역순으로 지정됨-->
+        <li>김밥</li>
+        <li>편도</li>
+        <li>라면</li>
+        <li>국밥</li>
+        <li type="none">
+            <ol type="1" start="5">
+                <li>돈까스</li>
+                <li>스테이크</li>
+                <li>함박스테이크</li>
+            </ol>
+        </li>
+    </ol>
+    <hr />
+</body>
+</html>

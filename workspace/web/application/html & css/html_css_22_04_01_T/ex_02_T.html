@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>쌤풀이_ex_02</title>
+    <style>
+        div#img{
+            width: 100px;
+            height: 140px;
+            background-image: url(../../img2/back.png);
+            background-repeat: no-repeat;
+            background-size: 100px 140px;
+            border: 1px solid black;
+            background-position: center;
+            /* 백그라운드 사이즈 조절 
+            auto : 원래 배경이미지 크기 (기본값)
+            contain: 지정한 요소안에 배경이미지가 다 들어오도록 확대 / 축소
+            cover : 지정 요소를 다 덮도록 배경이미지 확대 / 축소 
+            -> 해당 범위가 작고 이미지가 크면 해당 범위까지만 보여줌 -> 이미지 짤림
+            */
+            background-size: contain;
+        }
+
+        div#img:hover{
+            background-image: url(../../img2/spade.png);
+        }
+    </style>
+</head>
+<body>
+    <h3>:hover 활용</h3>
+    <hr/>
+    <!-- table>tr>td*2 -->
+    <table>
+        <tr>
+            <td>마우스를 올리면 카드의 앞면이 보인다.</td>
+            <td>
+                <div id="img"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

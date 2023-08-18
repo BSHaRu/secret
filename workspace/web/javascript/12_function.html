@@ -1,0 +1,81 @@
+<!-- 12_function.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+/* 
+   - 함수(function) 하나의 특별한 목적을 가진 작업을 수행하기 위해 
+    독립적으로 설계된 코드의 집합
+   - 함수 이름 : 함수를 호출하기 위해 명시된 식별자
+   - 매개변수목록(parameters) : 함수 호출 시 전달되는 인자(인수)의 값을 
+                                저장 할 변수들
+   - 함수 블럭(바디) : 함수의 고유 기능을 수행하는 명령문의 집합
+   - 반환문(return문) : 함수가 모든 작업을 수행하고 반환하는 데이터
+*/
+        /* 함수선언 함수이름(매개변수들 ... , ..., ...){
+                실행블럭
+             }               */
+        
+        // 함수 호출
+        print();
+
+        function print(){
+            console.log("print 함수 호출");
+        }
+        // 함수도 var 처럼 호이스팅이 된다.
+
+        function printName(name) { // name : 매개변수
+            document.write("이름은 " +name+" 입니다.");
+        }
+
+        printName("홍길동"); // 홍길동 : 인자(인수)
+        printName("김유신");
+
+        function sum(x,y){
+            return x + y; // return : 반환 값을 전달하는 친구
+                          //    -> 함수의 종료를 의미해서 return 이하는 실행안됨
+            console.log("sum 종료"); // 그래서 console 로그에 안남음
+        }
+        let twin = sum(10,30);
+        printName(twin);
+
+        // nFunction(); 
+        /* var가 호이스팅 되지만, 함수로 아직 정의가 안된 상태라 함수 호출이 불가능함 
+        cf) 함수가 호이스팅 되는건 function으로 바로 걸었을 경우에 호이스팅이 되는거임 */
+        // 기명 함수 (named function)
+        var nFunction = function test(){
+            alert("test 호출");
+        }
+        nFunction();
+        // test(); // test가 nFunction으로 대입 되었기때문에 test는 사라짐
+
+        // 익명 함수(anonymous function) - 한번의 기능을 등록시켜 줄때 사용
+        var anonyFunc = function (){
+            alert('익명 함수 호출');
+        }
+        document.write("typeof : " + typeof(anonyFunc)); 
+        anonyFunc();
+
+        // callBack 함수 - 특정 이벤트가 발생 할 때 해당 값을 호출 해라.
+        function call(callBackParam){ 
+            for(let i = 0; i < 5; i++){
+                callBackParam(i);
+            }
+        }
+        var func = function(i){
+            console.log("func : " + i);
+        }
+        func(10);       
+        call(func); // 이건 끝날때까지 살아 있는 친구
+        call(function(x){
+            alert(x);
+        }); // 인자값을 바로 넣어서 사용하면 한번 사용하고 사라지게 되는 친구
+        // 이런건 이벤트 처리 할 때 자주 사용 되는 친구임
+
+    </script>
+</head>
+<body>
+</body>
+</html>

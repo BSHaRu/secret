@@ -1,0 +1,49 @@
+<!-- css_2_border.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>border</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background-color: beige;
+            border-right-color: #8792ee;
+            /* 외각선의 크기(두께) */
+            border-right-width: thick;
+            /* 외각선 스타일 */
+            border-right-style: solid;
+            /* 
+                style
+                solid : 실선
+                dotted : 점선
+                dashed : 약간 긴 점선
+                double : 이중 실선
+
+                width : 두께
+                thick : 굵게
+                medium : 중간
+                thin : 얇게
+                일반적으로 px 단위로 두께 지정
+            */
+            border-top-color: red;
+            border-top-width: thin;
+            border-top-style: double;
+        }
+
+        .inner_box{
+            border:1px dotted black;
+            /* border-top-left-radius: 20px; */
+            /* border-radius: 10px 20px 30px 50px; */
+            /* border-radius: 20px 50px;  */
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner_box">Content</div>
+    </div>
+</body>
+</html>

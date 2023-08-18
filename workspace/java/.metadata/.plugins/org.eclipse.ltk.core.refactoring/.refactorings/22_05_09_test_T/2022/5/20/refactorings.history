@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;generic.ex2.explain2&apos; to &apos;generic.ex2&apos;&#x0D;&#x0A;- Original project: &apos;22_05_09_test_T&apos;&#x0D;&#x0A;- Original element: &apos;22_05_09_test_T/src/generic.ex2.explain2&apos;&#x0D;&#x0A;- Renamed element: &apos;22_05_09_test_T/src/generic.ex2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;generic.ex2.explain2&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;generic.ex2.explain2" name="generic.ex2" qualified="false" references="true" stamp="1652059353954" textual="false" version="1.0"/>
+</session>

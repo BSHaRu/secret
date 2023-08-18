@@ -1,0 +1,50 @@
+<!-- 06_hover.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+        }
+
+        #box.over{
+            background-color: lightblue;
+            border-radius: 50px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            // #box 요소에 마우스가 올라왔을 때
+            $("#box").hover(function(){
+                $(this).addClass("over");
+                //#box 요소에서 마우스가 떠나갔을 때
+            },function(){
+                $(this).removeClass('over');
+            });
+
+            $("h1").hover(function(){
+                $(this).css({
+                    backgroundColor: "darkgray",
+                    color : "#fafafa"
+                });
+            },function(){
+                $(this).css({
+                    backgroundColor: "",
+                    color : ""
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <h1>HOVER - 1</h1>
+    <h1>HOVER - 2</h1>
+    <h1>HOVER - 3</h1>
+</body>
+</html>

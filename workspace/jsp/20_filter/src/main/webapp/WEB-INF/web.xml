@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>20_filter</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>testServlet</servlet-name>
+  	<servlet-class>servlets.TestServelt</servlet-class>
+  </servlet>
+  <servlet-mapping> <!-- 요청경로 -->
+  	<servlet-name>testServlet</servlet-name>
+  	<url-pattern>/test</url-pattern> <!-- test가 호출되면 servlet 실행 -->
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>encodingFilter</filter-name> <!-- 변수명이랑 동일하게 해줘야됨 -->
+  	<filter-class>filters.EncodingFilter</filter-class>
+  	<init-param> <!-- filter가 init 할때 인코딩을 UTF-8로 초기화 시켜서 실행 -->
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  	<init-param> <!-- init-param은 여러개 지정해줄 수 있음 -->
+  		<param-name>method</param-name>
+  		<param-value>POST</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern> <!-- 특정 url에만 지정할꺼면 그 값을 넣어도 되지만, 지금은 모두 적용시킨거임 -->
+  </filter-mapping>
+</web-app>

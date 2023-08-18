@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>js_ex_05</title>
+    <script>
+        let success = true;
+        let num = 20;
+        let n = 0;
+        while(success){
+            n++;
+            let a = prompt("1~100까지의 정수를 입력해주세요.");
+
+            if(a == num){
+                alert(`성공입니다. 추측횟수 : ${n}`);
+                success = false;
+            }else if(a > num){
+                alert(`낮습니다. 추측횟수 : ${n}`);
+                continue;
+            }else if(a < num){
+                alert(`높습니다. 추측횟수 : ${n}`);
+                continue;
+            }else{
+                break;
+            }
+                
+        }  
+    </script>
+</head>
+<body>
+</body>
+</html>

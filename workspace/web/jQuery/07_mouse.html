@@ -1,0 +1,44 @@
+<!-- 07_mouse.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $(".out").css({
+                width: 100,
+                height: 100,
+                background : "darkgray"
+            }).on("click",function(){
+                $(this).css("background-color","red");
+                // mouseover를 쓰면 이벤트 전파 -> 버블링 생김
+            // }).on("mouseover",function(){
+                // mouseenter로 쓰면 버블링 없음
+            }).on("mouseenter",function(){
+                $(this).css("background-color","blue");
+                // mouseout 역시 이벤트 전파 -> 버블링 생김
+            // }).on("mouseout",function(){
+                // mouseleave는 버블링 없음
+            }).on("mouseleave",function(){
+                $(this).css("background-color","#8972ee");
+            }); 
+            /* .on을 통해서 여러개 이벤트를 적용 시켜 줄 수 있다.
+            .on도 {}를 통해서 .on안에 여러개를 넣을 수 있기도 함    */
+            $(document).mousemove(function(event){
+                $("#log").text(event.pageX+":"+event.pageY);
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- (div.out>p{MOUSE})+div#log -->
+    <div class="out">
+        <p>MOUSE</p>
+    </div>
+    <div id="log"></div>
+</body>
+</html>

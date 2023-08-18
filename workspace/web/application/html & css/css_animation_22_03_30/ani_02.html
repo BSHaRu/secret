@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        div{
+            margin: 0;
+            padding: 0;
+        }
+        .ball{
+            width:50px;
+            height:50px;
+            background-color: skyblue;
+            border: 1px solid black;
+            border-radius: 50%;
+            /* float를 통해서 세로가 아닌 가로로 정렬 해줌 */
+            float:left;
+            text-align:center;
+            /* line-box의 높이를 지정함
+            -> 텍스트 줄간격 조절할때 많이씀 */
+            line-height: 50px;
+            margin:0 5px;
+            animation: bounce 1s infinite ease-in-out alternate;
+        }
+
+        .ball:nth-child(2){
+            animation-delay: 0.2s;
+        }
+        .ball:nth-child(3){
+            animation-delay: 0.3s;
+        }
+        .ball:nth-child(4){
+            animation-delay: 0.4s;
+        }
+        .ball:nth-child(5){
+            animation-delay: 0.5s;
+        }
+
+        .ball:hover{
+            /* 기본값 애니메이션 동작 */
+            animation-play-state: running;
+            /* 애니메이션 움직임을 일시 정지 */
+            animation-play-state: paused;
+            cursor:wait;
+        }
+        @keyframes bounce{
+            0%{
+                margin: 0 5px;
+                opacity: 30%;
+            }
+            70%{
+                margin: 200px 5px;
+                opacity: 70%;
+            }
+            100%{
+                margin: 180px 5px;
+                opacity: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball">K</div>
+    <div class="ball">O</div>
+    <div class="ball">R</div>
+    <div class="ball">E</div>
+    <div class="ball">A</div>
+</body>
+</html>

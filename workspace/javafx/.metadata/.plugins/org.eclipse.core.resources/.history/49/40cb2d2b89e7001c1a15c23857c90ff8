@@ -1,0 +1,21 @@
+package omok;
+
+import javafx.application.Application;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.stage.Stage;
+
+public class AppMain extends Application {
+	
+	Canvas canvas;
+	GraphicsContext gc;
+
+	@Override
+	public void start(Stage primaryStage) {
+		
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+}

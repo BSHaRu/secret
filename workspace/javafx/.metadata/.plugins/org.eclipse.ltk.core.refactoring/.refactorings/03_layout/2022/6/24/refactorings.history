@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Root.fxml&apos; to &apos;pj_client/src&apos;&#x0D;&#x0A;- Original project: &apos;03_layout&apos;&#x0D;&#x0A;- Destination element: &apos;pj_client/src&apos;&#x0D;&#x0A;- Original element: &apos;Root.fxml&apos;" description="Copy file" destination="=pj_client/src" element1="src/Root.fxml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1654837125777" units="0" version="1.0"/>
+</session>

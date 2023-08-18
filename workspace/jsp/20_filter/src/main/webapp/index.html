@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index.jsp</title>
+</head>
+<body>
+	<h3>result get</h3>
+	<form action="result.jsp" method="get">
+		<input type="text" name="test" /> <br/>
+		<button>result GET</button>
+	</form>
+	<h3>result post</h3>
+	<form action="result.jsp" method="post">
+		<input type="text" name="test" /> <br/>
+		<button>result POST</button>
+	</form>
+	<hr/>
+	<h3>test servlet get</h3>
+	<a href="test?name=홍길동">test get</a>
+	<hr/>
+	<h3>test servlet post</h3>
+	<form action="test" method="post">
+		<input type="text" name="name" /> <br/>
+		<button>test post</button>
+	</form>	
+</body>
+</html>

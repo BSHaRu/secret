@@ -1,0 +1,148 @@
+<!-- 4_navigation.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wrap{
+            width:1100px;
+            margin:0 auto;
+        }
+        header{
+            padding:20px 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration:none;
+            color: #fafafa;
+        }
+
+        header > nav > ul > li {
+            position: relative;
+
+            float:left;
+            width:220px;
+            height:50px;
+            background-color: skyblue;
+            border:1px solid #fafafa;
+            box-sizing: content-box; /* 이게 기본값으로 지정 되어있음 */
+    /* border-box를 적용하면 border값 포함해서 해당 크기가 지정됨 */
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        header > nav > ul > li> .inner_menu{
+             /* 3차원으로 만들기 */
+            position:absolute;
+            width:220px;
+            top:50px;
+            left: 0;
+
+            color: #fafafa;
+            background-color: #8792ee;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        header > nav > ul > li:hover .inner_menu{
+            visibility: visible;
+            opacity: 1;
+        }
+
+        aside{
+            width: 100%;
+            float: left;
+        }
+        aside li{
+            width:200px;
+            background-color: pink;
+            text-align: center;
+            padding: 20px;
+            border-top:3px solid #dfdfdf;
+            transition: all 1s;
+        }
+
+        aside li:hover{
+            background-color: rgba(221, 167, 96, 0.986);
+            transform: translateX(20px);
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                        <ul class="inner_menu">
+                        <!-- li{메뉴-$}*3 -->
+                            <li>메뉴-1</li>
+                            <li>메뉴-2</li>
+                            <li>메뉴-3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About us</a>
+                        <ul class="inner_menu">
+                            <!-- li{메뉴-$}*3 -->
+                            <li>메뉴-1</li>
+                            <li>메뉴-2</li>
+                            <li>메뉴-3</li>
+                        </ul>    
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                        <ul class="inner_menu">
+                            <!-- li{메뉴-$}*3 -->
+                            <li>메뉴-1</li>
+                            <li>메뉴-2</li>
+                            <li>메뉴-3</li>
+                        </ul>    
+                    </li>
+                    <li>
+                        <a href="#">Travel</a>
+                        <ul class="inner_menu">
+                        <!-- li{메뉴-$}*3 -->
+                            <li>메뉴-1</li>
+                            <li>메뉴-2</li>
+                            <li>메뉴-3</li>
+                        </ul>   
+                    </li>
+                    <li>
+                        <a href="#">Food</a>
+                        <ul class="inner_menu">
+                        <!-- li{메뉴-$}*3 -->
+                            <li>메뉴-1</li>
+                            <li>메뉴-2</li>
+                            <li>메뉴-3</li>
+                        </ul>    
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <!-- (li>a)*4 -->
+                    <li><a href="#">맛집</a></li>
+                    <li><a href="#">인기</a></li>
+                    <li><a href="#">별점</a></li>
+                    <li><a href="#">조회</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+</body>
+</html>

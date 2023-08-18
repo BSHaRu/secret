@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        let isRun = true; // 지정안하고 있었음
+        let n = 70;
+        n = parseInt(Math.random()*100)+1;
+        // 정수 , 랜덤값 , 0~99니깐 +1을 해줌으로써 1~100이됨
+        let x = 0;
+        while(isRun){ // input = n 으로 해서 탈출하려고 했는데 안되더라.. ㅠㅠ
+            x++;
+            let input = prompt("1~100까지의 정수를 입력해주세요"); //처음에 while문 밖에 뺐었음 -> 반복 안되서 안으로 집어 넣음
+            input = input.trim(); // 아래 넣으면 안되서 위로 올려버림
+
+            if(input == "" || input == null || isNaN(input)){
+                alert("1~100까지 정수만 입력하시오");
+                continue;
+            } // 이거 생각지도 못했음 고로 trim도 생각지도 못했지.
+
+            if(input == n){
+                alert("성공입니다. 추측횟수 : "+x);
+                isRun = false; // input != n 이걸로 탈출이 안되더라??
+            }else if(input > n){
+                alert("높습니다. 추측횟수 : "+x);
+            }else{
+                alert("낮습니다. 추측횟수 : "+x);
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

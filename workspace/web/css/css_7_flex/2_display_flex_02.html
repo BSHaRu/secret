@@ -1,0 +1,59 @@
+<!-- 2_display_flex_02.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <!-- https://flexboxfroggy.com -->
+    <!-- https://flexboxdefense.com -->
+    <title>flex02</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        .wrap{
+            margin: 0 auto;
+            width: 600px;
+            background-color: gray;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        
+        .item{
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+        
+        /* 
+            flex-grow에 부여된 속성 값의 합을 기준으로 남은 여백을 나눔
+            ->img폴더 - 대충 정리해서 올려놈
+        */
+        .item01{
+            flex-grow:1;
+        }
+        .item02{
+            flex-grow:1;
+        }
+        .item03{
+            flex-grow:0;
+        }
+        .item04{
+            flex-grow:2;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.wrap>div.item.item$${$$}*4 -->
+    <div class="wrap">
+        <div class="item item01">01</div>
+        <div class="item item02">02</div>
+        <div class="item item03">03</div>
+        <div class="item item04">04</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* font.css */
+
+.lblText{
+	-fx-font-size:35;
+	-fx-font-weight:bold; 	/* normal bold */
+	-fx-font-family : 'Nanum Pen Script', '굴림', 'gulim', 'Arial Black';
+	-fx-text-fill: red;
+	-fx-text-fill: linear-gradient(to top, pink, #8972ee);
+	-fx-text-fill: radial-gradient(
+		center 50% 50%,
+		radius 50%,
+		red,
+		blue
+	);
+}

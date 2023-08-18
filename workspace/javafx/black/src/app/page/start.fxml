@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Start">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/Sc6.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="move" layoutX="500.0" layoutY="370.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="200.0" text="START">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Label layoutX="411.0" layoutY="125.0" text="BLACK JACK">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="66.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.34285714285714286" endY="0.023809523809523808" startX="0.18095238095238098" startY="0.19523809523809524">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#3fe2ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

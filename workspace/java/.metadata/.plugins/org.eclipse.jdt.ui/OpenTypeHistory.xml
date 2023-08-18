@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=09_extentds/src&lt;extends4.protectedz.a{A.java[A" modifiers="1" timestamp="1651198851776"/>
+    <typeInfo handle="=10_interface/src&lt;b.defaults{Printable.java[Printable" modifiers="513" timestamp="1651462623668"/>
+    <typeInfo handle="=10_interface/src&lt;d.array{Tire.java[Tire" modifiers="513" timestamp="1651470281409"/>
+    <typeInfo handle="=10_interface/src&lt;e.poly{Connector.java[Connector" modifiers="513" timestamp="1651471218347"/>
+    <typeInfo handle="=10_interface/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;javax.sql(ConnectionEventListener.class[ConnectionEventListener" modifiers="1537" timestamp="1650330120723"/>
+    <typeInfo handle="=11_exception/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1650330120723"/>
+    <typeInfo handle="=13_generic/src&lt;generic05_wildcard{Person.java[Person" modifiers="1" timestamp="1651806247000"/>
+    <typeInfo handle="=13_generic/src&lt;generic05_wildcard{Student.java[Student" modifiers="1" timestamp="1651806300722"/>
+    <typeInfo handle="=14_collection_framework/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.util(Comparator.class[Comparator" modifiers="1537" timestamp="1650330120723"/>
+    <typeInfo handle="=15_io_stream/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.io(ObjectOutputStream.class[ObjectOutputStream" modifiers="33" timestamp="1650330120723"/>
+    <typeInfo handle="=16_database_jdbc/src&lt;guide_book.dao{BookDAO.java[BookDAO" modifiers="513" timestamp="1653368521962"/>
+    <typeInfo handle="=18_thread/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Thread.class[Thread" modifiers="33" timestamp="1650330120723"/>
+    <typeInfo handle="=21_Chat_Server/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/ext\/jfxrt.jar=/javadoc_location=/http:\/\/docs.oracle.com\/javase\/8\/javafx\/api\/=/&lt;javafx.scene.layout(FlowPane$Run.class[Run" modifiers="10" timestamp="1650330118874"/>
+    <typeInfo handle="=18_thread/C:\/Program Files\/Java\/jre1.8.0_321\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1650330120723"/>
+</typeInfoHistroy>

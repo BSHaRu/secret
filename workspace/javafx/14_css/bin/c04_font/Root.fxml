@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+	<!-- https://fonts.google.com/ 에서 폰트 선택 -->		<!-- &가 인식이 안되기때문에 &amp;라고 특수문자 처리를 해줘야 &가 인식됨 -->
+<AnchorPane 																
+stylesheets="@font.css, @https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&amp;family=Oswald&amp;display=swap"
+prefHeight="150.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="130.0" layoutY="68.0" styleClass="lblText" text="Java FX" />
+   </children>
+</AnchorPane>

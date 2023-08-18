@@ -1,0 +1,54 @@
+/* back.css */
+VBox{
+	-fx-border-color:#222;
+	-fx-pref-width:100px;
+	-fx-pref-height:100px;
+}
+
+#vbox1{
+	-fx-background-color:#222;
+	-fx-background-radius:20;
+	-fx-border-radius:20;
+}
+
+#vbox2{
+	-fx-background-color:rgba(255,128,128,0.5);
+	/* linear-gradient : 그라데이션 효과(to 위치, 시작색, 마지막색) */
+	-fx-background-color:linear-gradient(to bottom, #000, #8972ee);
+}
+
+#vbox3{
+	/* 반지름을 이용한 원형 그라디언트 */
+	/* radial-gradient(shape size at position, color1, color2, ..., color3) */
+	/* https://www.codingfactory.net/10850 참고 */
+	-fx-background-color:radial-gradient(
+	  /* 중앙에서 상하50% 좌우 50%,  */
+		center 50% 50%, radius 50%, #fff, #fe642e
+	);
+	-fx-background-radius : 50;
+	-fx-border-radius : 50;
+}
+
+
+#vbox4{
+	-fx-background-color:skyblue;
+	-fx-background-image:url(resource/icon.gif);
+	-fx-background-size:33.333%, 33.333%; /*폭, 넓이 => 크기를 1/3로 줄임*/
+	/* repeat, no-repeat, repeat-x, repeat-y */
+	-fx-background-repeat : no-repeat;
+}
+
+#vbox5{
+	-fx-background-color : yellow;
+	-fx-background-image : url(resource/loading.gif);
+	-fx-background-size : 33.333%, 33.333%;
+	-fx-background-repeat : no-repeat;
+	-fx-background-position: center;
+	-fx-background-position : bottom center;
+	-fx-background-position : 70% center; /* 왼쪽에서 70%, 중앙정렬 */
+}
+
+
+
+
+

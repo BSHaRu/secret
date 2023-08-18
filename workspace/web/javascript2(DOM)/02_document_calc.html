@@ -1,0 +1,31 @@
+<!-- 02_document_calc.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        function result(){
+        // #first + #second 한 결과를 #result tag요소에 value 값으로 저장
+            let first = document.getElementById("first");
+            console.log(first.value);
+            let second = document.querySelector("#second");
+            console.log(second.value);
+            let result = document.querySelectorAll("#result");
+            console.log(result[0].value);
+            // first : "10" second : "20"
+            // -> first + second = "1020"
+            result[0].value = parseInt(first.value) + parseInt(second.value);
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="first" tabindex="1" />
+    +
+    <input type="number" id="second" tabindex="2" />
+    =
+    <input type="text" id="result" readonly />
+    <input type="button" onclick="result();" value="결과확인" />
+
+</body>
+</html>

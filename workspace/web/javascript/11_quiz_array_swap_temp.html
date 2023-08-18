@@ -1,0 +1,52 @@
+<!-- 11_quiz_array_swap.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>배열 2 - 오름차순</title>
+    <script>
+        // temp = 임의의 데이터를 저장하는 친구
+        let a = 10, b = 20, temp = 0;
+        console.log(`a : ${a}`);
+        console.log(`b : ${b}`);
+        
+        temp = a; // temp = 10
+        a = b;    // a = 20
+        b = temp; // b = 10
+        console.log(`a : ${a}`);
+        console.log(`b : ${b}`);
+
+        // 위의 방법으로 위치를 바꿔서(오름차순 or 내림차순) 정렬시킬거임
+        let aScores = [];
+        const STUDENT_NUM = 5;
+
+        for(let i = 0; i < STUDENT_NUM; i++){
+           /* let score = prompt(i+"번째 학생의 점수를 입력해 주세요.");
+            aScores[i] = parseInt(score);  아래랑 같은 코드임 
+            -> 2줄 짜리를 1줄로 만든거  */
+            aScores[i] = prompt(i+"번째 학생의 점수를 입력해 주세요.");
+        }
+        console.log(aScores);
+
+        temp = 0 // 위에 let temp를 선언해서 초기화만 시켜주는거임
+        for(let i = 0; i < aScores.length; i++){
+            for(let j = i+1; j < aScores.length; j++){
+                // 오름차순으로 정렬 하는 방법
+                // cf) if문 부등호만 바꾸면 내림차순 됨
+                if(aScores[i] > aScores[j]){
+                    // 여기서는 위에 temp 있는거 그대로 쓰는방식
+                    temp = aScores[i];
+                    aScores[i] = aScores[j];
+                    aScores[j] = temp; 
+                }
+            }
+        }
+        console.log(aScores);
+        document.write(aScores[0]); // 오름차순 기준으로 최소값
+        let max = aScores[aScores.length - 1];
+        document.write(max);
+    </script>
+</head>
+<body>
+</body>
+</html>

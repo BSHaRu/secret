@@ -1,0 +1,30 @@
+<!-- 13_object.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        // JSON(Javascript Object Notation) 방식
+        let product = {
+          name : "오렌지",
+          type : "과일" ,
+          price : 5000,
+          origin : "Korea",
+          consume : function(name){
+              document.write(
+                  name+"님이 "+this.name+"을(를) 훔쳐먹었습니다."
+                );
+            } 
+        }; // 원격(데이터 전송)에서 현재 가장 많이 쓰이고 있는 방식
+        console.log(typeof(product)+":"+product);
+        console.log(product.name);
+        console.log(product.type);
+
+        product.name = "딸기";
+        product.consume("홍길동");
+    </script>
+</head>
+<body>
+</body>
+</html>

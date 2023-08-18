@@ -1,0 +1,68 @@
+<!-- 08_dom_event_click.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <!-- (label>input:radio)*4 -->
+    <!-- name값이 동일하면 단일 클릭만 된다 -->
+    <!-- 반복문으로 만들기  -->
+    <label>
+        <input type="radio" name="r1" id="">
+        lightblue
+    </label>
+
+    <label>
+        <input type="radio" name="r1" id="">
+        lightgreen
+    </label>
+
+    <label>
+        <input type="radio" name="r1" id="">
+        pink
+    </label>
+
+    <label>
+        <input type="radio" name="r1" id="">
+        orange
+    </label>
+
+    <script>
+        // 1번째 방법
+        let radios = document.getElementsByName("r1");
+        console.log(radios.length);
+        let labels = document.getElementsByTagName("label");
+        
+        for(let i = 0; i < radios.length; i++){
+            console.log(radios[i]);
+            console.log(labels[i].innerText); 
+        }
+
+        for(let i in radios){
+            radios[i].onclick = function(){
+                document.body.style.backgroundColor = labels[i].innerText;
+            }
+        }
+
+// 콘솔 청소 - 해당 위에 있는 콘솔 정리
+console.clear();
+
+        // 2번째 방법
+        /*  
+            [0] : [radio : lightblue]
+            [1] : [radio : lightgreen]
+            [2] : [radio : pink]
+            [3] : [radio : orange]             */
+        for(let item of radios){
+            console.log(item);
+            item.onclick = function(){
+                let color = item.parentNode.innerText; // item(여기선 radios)기준으로 부모노드(label)안에 있는 text를 가져옴
+                console.log(color);
+                document.body.style.backgroundColor = color; 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- css_9_z_index.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>z_index</title>
+    <style>
+        div{
+            position:absolute;
+        }
+
+        /* z-index값은 클수록 앞으로 오게 된다.
+        cf) 자식 index값이 아무리커도 부모값보다 앞에 나올 수 없다.
+        */
+        .index1{
+            width:100%;
+            height: 300px;
+            background-color: pink;
+            z-index: 10;
+        }
+        .index2{
+            width:300px;
+            height:100px;
+            background-color: blue;
+            z-index: 5;
+        }
+
+        .index3{
+            width:100px;
+            height:100px;
+            background-color: black;
+            z-index: 15;
+        }
+    </style>
+</head>
+<body>
+    <div class="index1"></div>
+    <div class="index2">
+        <div class="index3"></div>
+    </div>
+</body>
+</html>

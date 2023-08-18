@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		/**
+		 * 시점 : run button click 시
+		 * 대상 : div#target 내부 div.child
+		 * 기능 : target안에 div.child 개수 console에 출력 
+		 * 함수 : size() or length
+		*/
+
+		$(function(){
+			$('[value="run"]').click(function(){
+			// $("#target > .child") : 배열형태로 잡혀 있기 때문에 길이를 볼 수 있음
+				let childs = $("#target > .child");  
+				console.log(childs.length); // length는 js에서 사용
+
+				childs = $("#target").children(".child");
+				console.log(childs.size()); // size()는 jquery에만 존재
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="target"
+		style="color: rgb(68, 68, 68); width: 150px; height: 190px; float: left; border: 1px solid rgb(204, 204, 204); background-color: rgb(230, 230, 250); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		#target<br>
+		<br>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+	</div>
+	<div id="another"
+		style="color: rgb(68, 68, 68); width: 150px; height: 190px; float: left; border: 1px solid rgb(204, 204, 204); background-color: rgb(230, 230, 250); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		#another<br>
+		<br>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+		<div class="child"
+			style="background-color: rgb(147, 112, 219); border: 1px solid rgb(136, 136, 136); width: 60px; margin: 5px; padding: 2px; color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">.child</div>
+	</div>
+	<input type="button" value="run" />
+</body>
+</html>

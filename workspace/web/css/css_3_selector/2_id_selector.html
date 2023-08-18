@@ -1,0 +1,44 @@
+<!-- 2_id_selector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>id selector</title>
+    <style>
+        div{
+            border:1px solid black;
+        }
+        /* id 선택자 keyword # */
+        #header{
+            width:800px;
+            background-color: yellow;
+        }
+        #wrap{
+            width:800px;
+        }
+        #aside{
+            width:198px;
+            background-color: blue;
+        }
+        #content{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>#Header Tag</h1>
+    </div>
+    <!-- wrap은 html의 전체를 감싸고 있다고 보면됨
+    -> wrap이라는 큰 틀안에 header / aside / content / footer 등이 있음
+    -->
+    <div id="wrap">
+        <div id="aside">
+            <h1>#Asdie Tag</h1>
+        </div>
+        <div id="content">
+            <h1>#Content Tag</h1>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>화면설계 평가</title>
+</head>
+<body>
+    <!-- table[border=1 width=700]>(tr>th[colspan=5])+(tr>th*5)+(tr>td*5)*2 -->
+    <table border="1" width="700">
+        <tr>
+            <th colspan="5">(빅데이터전문가) 빅데이터 기술을 활용한 자바(JAVA)프로그래밍 전문가 A</th>
+        </tr>
+        <tr>
+            <th>강좌이름</th>
+            <th>교수자</th>
+            <th>소개</th>
+            <th>강좌코드</th>
+            <th>실습비</th>
+        </tr>
+        <tr>
+            <td>화면설계</td>
+            <td>최기근</td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, voluptatibus quod! Porro nesciunt reprehenderit ipsum explicabo dolorum quas dolor nostrum fugit eum! Accusamus cumque asperiores fugit deserunt dolores ipsa eum.</td>
+            <td>2021100201_16v5</td>
+            <td rowspan = "0">0</td>
+            <!-- rowspan "0"일경우 해당 아래가 모두 병합되게 됨 
+            대신 데이터가 추가 되었을 경우 추가된 데이터가 밀려나게 되기때문에 주의 해야됨.
+            cf) colspan은 0이 없음
+            -->
+        </tr>
+        <tr>
+            <td>화면구현</td>
+            <td>최기근</td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor delectus quas magnam quaerat natus aliquam aliquid eaque dolores commodi minus perferendis rerum, non tenetur ex fugiat nemo obcaecati accusamus ut!</td>
+            <td>201002021_16v6</td>
+        </tr>
+
+        <tr>
+            <td>화면구현</td>
+            <td>최기근</td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor delectus quas magnam quaerat natus aliquam aliquid eaque dolores commodi minus perferendis rerum, non tenetur ex fugiat nemo obcaecati accusamus ut!</td>
+            <td>201002021_16v6</td>
+            <td>23,000</td>
+        </tr>
+    </table>
+</body>
+</html>

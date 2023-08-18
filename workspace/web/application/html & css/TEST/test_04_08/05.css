@@ -1,0 +1,42 @@
+ul.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+ul.flex li{
+    list-style: none;
+    flex-grow : 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: 1px solid white;
+    border-right: none;
+    padding: 10px;
+    box-sizing: border-box;
+    /* padding값이랑 box-sizing 안하고 제출함 */
+}
+ul.flex li:last-child{
+    border-right: 1px solid white;
+}
+ul.flex li a{
+    text-decoration: none;
+    color: #fafafa;
+}
+ul.flex li:hover{
+    background-color: #fafafa;
+}
+ul.flex li:hover a{
+    color:gray;
+}
+
+header{
+    padding: 10px;
+}
+
+header > nav{
+    padding-top : 10px;
+}

@@ -1,0 +1,54 @@
+.wrap{
+	padding : 0;
+	margin: 0 auto;
+	width: 1100px;
+	/* background-color: lightgrey; */
+}
+
+h1, h2{
+	text-align: center;
+}
+header{
+	background-color: lightsalmon;
+	/* hidden 값을 줘야 header에 있는 nav가 밑으로 살짝 삐져나옴 */
+	overflow: hidden;
+}
+nav{
+	background-color: lightgreen;
+}
+
+main{
+	background-color: darkgray;
+}
+main > h1{
+	margin: 0;
+	padding: 15px 0;
+}
+/* wrap에 bg를 안주고 main에 bg를 주면 
+main 안에 있는 h1의 margin값 때문에 header와 section의 높이가 떨어짐
+그래서 h1에 margin값을 0으로 주고 크기는 padding값을 줘서 높이 조절함*/
+
+aside, section{
+	float: left;
+	height: 500px;
+	padding: 1%;
+	box-sizing: border-box;
+}
+aside{
+	background-color: skyblue;
+	width: 20%;
+}
+section{
+	background-color: mistyrose;
+	width: 60%;
+}
+article{
+	background-color: coral;
+	height: 400px;
+}
+
+footer{
+	clear: left;
+	height: 70px;
+	background-color: lightcoral;
+}

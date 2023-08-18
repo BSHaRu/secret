@@ -1,0 +1,49 @@
+<!-- 12_toggle_effect.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        .page{
+            border: 1px solid black;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <button>toggle</button>
+    <hr/>
+    <div class="page">
+        <h1>lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nisi, veniam iste quod in repellendus sapiente harum nostrum accusantium cum ratione fuga esse id ab suscipit alias ipsam eos recusandae.</p>
+    </div>
+    <div>dummy</div>
+    <script>
+        $(".page").hover(function(){
+            /* hide & show 속성값(단위 : ms) - 대각선 기준
+                slideUP & slideDown - 아래 기준
+                400 == 'fast'
+                500 == 'normal' 
+                600 == 'slow'
+            */
+            // $(this).stop().hide(500);
+            // $(this).stop().slideUp(500);
+            $(this).stop().fadeOut(500);
+        },function(){
+            // $(this).stop().show("normal");
+            // $(this).stop().slideDown(500);
+            $(this).stop().fadeIn(500);
+        });
+
+        $("button").click(function(){
+            // $(".page").stop().slideToggle("slow"); // 아래
+            // $(".page").stop().toggle("slow"); // 대각선
+            $(".page").stop().fadeToggle("slow");
+        }); // display : 사라지면 none이되고, 나타날땐 black이 되고(공간부터생김) 나타남
+    </script>
+</body>
+</html>

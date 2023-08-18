@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Connection Pool (memberList.jsp 참고)
+	- DB를 접근할때마다 DB 커넥션 만들고 해제하는 작업 필요
+	  -> DB 성능 떨어짐(JDBC의 문제점)
+	=> 커넥션을 미리 만들어 놓고 요청 들어오면 
+	 알아서 커넥션 제공 하고, 끝나면 알아서 해제 해주는게 Connection Pool 
+	==> Client는 빠른 속도 / Server는 안정된 서버운영 가능 
+ -->
+<!--
+- name : JNDI에 등록될 자원의 "이름"
+
+- auth : 관리 객체
+
+- type : JNDI에서 "이름"을 찾았을 때, 연결될 "객체" 
+ -> DataSource를 통해 Connection을 제어하기 때문에 이를 지정
+ 
+- factory : 사용할 DBCP 라이브러리 지정(여기서는 DBCP 톰캣 라이브러리 위치)
+			-> org.apache.tomcat 패키지 이름(도메인 역순)
+- driverClassName : JDBC Driver의 경로를 입력합니다. 
+- url : 접속할 DB 서버의 url을 입력합니다. 
+- username : DB에 로그인할 계정 ID
+- password : DB에 로그인할 패스워드
+
+=> 보통 바뀌는건 factory 위치만 바뀌고 나머지는 다 똑같음 
+
+==> 이걸 서버(톰캣서버)자체에 변경해서 그냥 바로 적용시켜줄 수도 있음
+-->
+<Context>
+	<Resource
+		name="java/MySqlDB" 
+		auth="container" 
+		type="javax.sql.DataSource" 
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/bigdata" 
+		username="bigdata" 
+		password="12345"
+		initialSize="10" 
+		maxActive="200" 
+		minIdle="10" 
+		maxWait="60000"
+	/>
+	<!-- 
+		initialSize : Connection pool 생성시 최초에 생성 할 커넥션 개수
+					-> default : 0
+		maxActive : 동시에 요청 할 경우 최대 커넥션 개수
+					-> default : 8
+		maxIdle : 커넥션 풀에 반납할 때 유지될 수 있는 커넥션 개수
+					-> default :8					
+		minIdle : 최소한으로 유지될 커넥션 개수
+					-> default : 0
+		maxWait(millis) : 할당 받을 커넥션이 없을때(객체x) 스레드를 block 시킬 시간(1/1000초)
+		 			-> 끝나면 Exception이 발생 
+		removeAbandoned : 오랫동안 열려만 있고 close() 메서드가 호출되지 않는 커넥션을 임의로 닫는 기능을 설정. 
+					-> default: false
+					(removeAbandonedOnBorrow / removeAbandonedOnMaintenance)
+		logAbandoned : 커넥션 자원이 낭비되고 있는 위치를 로그로 출력 (true)
+	 -->
+</Context>

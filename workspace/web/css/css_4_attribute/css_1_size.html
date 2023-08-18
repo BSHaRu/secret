@@ -1,0 +1,44 @@
+<!-- css_1_size.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>size</title>
+    <style>
+        /* 사이즈 표현 방법
+        px : 화면 해상도 기준으로 크기 표시(기본값은 16px)
+        em : 배수 ex)1.5em = 16px * 1.5 = 24px
+        % : 백분율로 표시 ex) 150% = 16px * 1.5 = 24px
+        pt : dpi로 표시 / but, 운영체제별로 기본 값이 달라 잘 안씀
+        ->mac : 12pt = 16px / window : 16pt = 16px
+        */
+        .place{
+            background-color: yellow;
+            width:500px;
+            height:500px;
+            padding:50px;
+            margin:20px;
+        }
+
+        span{
+            border:1px solid black;
+            /* inline 요소는 크기를 가질 수 없다. */
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.place>span -->
+    <div class="place">
+        <span>Place</span>
+    </div>
+    <!-- div와 span 차이 
+    div :  자동 줄바꿈  / 박스 상태로 영역설정 / block 속성
+    span : 자동 줄바꿈 x / 줄 상태로 영역 설정 / inline 속성    
+    -->
+    <div class="place">
+        Place2
+    </div>
+</body>
+</html>

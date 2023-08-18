@@ -1,0 +1,77 @@
+<!-- css_6_text.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        /* https://flukeout.github.io -> 선택자 이용하는 퀴즈 사이트 */
+        h2{
+            width:400px;
+            height: 100px;
+            border:1px solid black;
+            overflow: scroll;
+            overflow: hidden;
+            /* auto : 자동으로 스크롤이 생성됨 */
+            overflow: auto;
+        }
+
+    /*  white-space 속성 키워드
+                    스페이스와 탭       줄바꿈      자동 줄바꿈
+        normal          병합            병합            O
+        nowrap          병합            병합            X
+        pre             보존            보존            X
+        pre-wrap        보존            보존            O
+        pre-line        병합            보존            O
+    */
+        h2.normar{
+            white-space: normal;
+        }
+        h2.nowrap{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            /* text-overflow는 white-space값이 nowrap이여야하고
+            overflow가 hidden이나 auto여야 한다.
+            */
+        }
+        h2.pre{
+            white-space: pre;
+        }
+        h2.pre-wrap{
+            white-space: pre-wrap;
+        }
+        h2.pre-line{
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <!-- h2{Block 요소 길게~~~~~~~~~표현~~~~~하자~~~~~~~}*5 -->
+    <h2 class="normal">
+        Block 요소 길게~~~~~~~~~
+        표현~~~~~
+        하자~~~~~~~
+    </h2>
+    <h2 class="nowrap">
+        Block 요소 길게~~~~~~~~~
+        표현~~~~~
+        하자~~~~~~~
+    </h2>
+    <h2 class="pre">
+        Block 요소 길게~~~~~~~~~
+        표현~~~~~
+        하자~~~~~~~
+    </h2>
+    <h2 class="pre-wrap">
+        Block 요소 길게~~~~~~~~~
+        표현~~~~~
+        하자~~~~~~~
+    </h2>
+    <h2 class="pre-line">
+        Block 요소 길게~~~~~~~~~
+        표현~~~~~
+        하자~~~~~~~
+    </h2>
+
+</body>
+</html>

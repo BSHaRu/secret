@@ -1,0 +1,57 @@
+<!-- 1_transform.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        .original{
+            width: 300px;
+            height: 300px;
+            background: url(../../img/transform_rotate.png);
+            border:1px solid black;
+        }
+        /* 
+            transform 좌표공간을 변형함으로써 일시적인 문서 흐름을
+            방해하지 않고 컨텐츠의 형태와 위치를 변경하는 속성
+            display:block; 블럭 요소에만 적용 가능
+        */
+
+        .rotate{
+            /* 해당 요소를 주어진 각도 만큼 
+               시계방향이나 반시계방향으로 회전 */
+            transform:rotateX(45deg);  
+            transform:rotateY(45deg);
+            /* 짜부된게 아니라 45도만큼 X,Y축으로 돌아간 거임 */
+        }
+
+        .scale:hover{
+            /* 해당 요소의 크기를 주어진 배율(x,y)만큼 늘리거나 줄임 */
+            transform: scale(2,2);
+            /* x나 y값만 따로 줄 수 도 있음 */
+            transform: scaleX(2);
+            transform: scaleY(2);
+        }
+
+        .skew:hover{
+            /* 해당 요소를 x축 y축 방향으로 기울임  */
+            transform:skewX(45deg);
+            transform:skewY(45deg);
+            transform:skew(100deg,20deg);
+        }
+
+        .translate:hover{
+            /* 현재 위치에서 해당 요소를 X축과 Y축의 거리만큼 이동 */
+            transform: translate(100px,200px);
+        }
+    </style>
+</head>
+<body>
+    <!-- div.original*5 -->
+    <div class="original"></div>
+    <div class="original rotate"></div>
+    <div class="original scale"></div>
+    <div class="original skew"></div>
+    <div class="original translate"></div>
+</body>
+</html>

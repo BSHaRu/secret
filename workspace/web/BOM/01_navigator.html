@@ -1,0 +1,50 @@
+<!-- 01_navigator.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        console.log(navigator);
+        // for in문에 객체가 대입되면 반환값은 객체의 속성이름이 됨
+        for(let key in navigator){
+            let value = navigator[key];
+            console.log(value);
+            let str = key + " : " + value;
+            document.write(str+"<br/>");
+        }
+
+        let userLang = navigator.language;
+        alert(userLang);
+
+        function isMobile(){
+            let user = navigator.userAgent.toLowerCase();
+            alert(user);
+            // iphone || android || ipad || ipod
+            // 문자열.indexOf("값") : 해당되는 값이 문자열에서 몇번째 위치하는지 인덱스 번호를 제공 
+            // => 인덱스 번호는 최소값이 0이라서 -1보다 크다는 거는 없다는거랑 같다 
+            /* if(user.indexOf("chrome") > -1){
+                alert("Chrome browser");
+            } 테스트 확인용 */
+
+            if(user.indexOf("iphone") > -1 ||
+                user.indexOf("android") > -1 ||
+                user.indexOf("ipob") > -1 ||
+                user.indexOf("ipad") > -1 ){
+                return true;
+            }
+            return false;
+        }
+
+        let is_mobile = isMobile();
+        if(is_mobile){
+            alert("모바일로 접속하셨습니다.");
+        }else{
+            alert("PC로 접속하셨습니다.");
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

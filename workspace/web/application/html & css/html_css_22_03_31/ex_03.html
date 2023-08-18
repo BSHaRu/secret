@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>ex_03</title>
+    <style>
+        *{
+            margin: 5px auto;
+            padding: auto 5px;
+        }
+        .box{
+            position: relative;
+            width: 100%;
+            height: 620px;
+        }
+        header{
+            width: 100%;
+            height: 50px;
+            background-color: skyblue;
+        }
+        nav{
+            float: left;
+            width: 10%;
+            height: 500px;
+            background-color: pink;
+        }
+        section{
+            float: left;
+            width: 79%;
+            height: 500px;
+            margin: 5px;
+            background-color: greenyellow;
+        }
+        article{
+            width: 600px;
+            height: 220px;
+            background-color: #696969;
+        }
+        aside{
+            float: right;
+            width: 10%;
+            height: 500px;
+            background-color: pink;
+        }
+        footer{
+            clear:both;
+            width: 100%;
+            height: 50px;
+            background-color: skyblue;
+        }
+
+        :root{
+            --text-color: #fafafa;
+        }
+        p{
+            color:var(--text-color);
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #121212;
+        }
+
+        div > header > nav > ul > li:hover a{
+            color:#fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div id-="box">
+        <header>
+            <p>header</p>
+        </header>
+        <nav id="left">
+            <p>nav</p>
+            <ul>
+                <li><a href="#">menu-1</a></li>
+                <li><a href="#">menu-2</a></li>
+                <li><a href="#">menu-3</a></li>
+            </ul>
+        </nav>
+        <section>
+            <p>section</p>
+            <article><p>article</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea rerum architecto velit, maiores magni, aperiam delectus aliquid similique molestias commodi laborum, voluptatum animi nostrum! Ducimus a facere molestias iste fuga.
+                Odit quisquam totam ad id ab debitis officia corrupti! Odit quod distinctio iste adipisci esse saepe sequi. Iure, sunt perferendis repellendus non repellat distinctio. Consequuntur ex quae ducimus ipsam minus.
+                A nisi, consequatur animi ea hic minus omnis cumque laboriosam dignissimos debitis sed mollitia! Optio, et eius accusamus, modi quisquam vero sit, dolorum excepturi temporibus ducimus beatae fugit cumque iure.</p>
+            </article>    
+        </section>
+        <aside id="right"><p>aside</p></aside>
+        <footer><p>footer</p></footer>
+    </div>
+</body>
+</html>

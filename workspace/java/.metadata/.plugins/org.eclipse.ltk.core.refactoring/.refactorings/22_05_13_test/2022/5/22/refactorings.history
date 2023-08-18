@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;guide_book&apos; to &apos;16_database_jdbc/src&apos;&#x0D;&#x0A;- Original project: &apos;22_05_13_test&apos;&#x0D;&#x0A;- Destination element: &apos;16_database_jdbc/src&apos;&#x0D;&#x0A;- Original element: &apos;22_05_13_test/src/guide_book&apos;" description="Copy package" destination="=16_database_jdbc/src" element1="/src&lt;guide_book" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1653284513063" version="1.0"/>
+</session>

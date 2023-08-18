@@ -1,0 +1,95 @@
+<!-- 7_attribute_selector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>속성 선택자</title>
+    <style>
+        /* [ ] 가 있으면 해당 태그를 가진 모든거에 적용 시켜라. */
+        [target]{
+            font-size:1.5em;
+        }
+
+        a[target="_blank"]{
+            color:red;
+        }
+        /* class 속성 값이 정확하게 apple인 요소 */
+        a[class="apple"]{
+            color:darkgray;
+        }
+        /* |의 의미(shift + \) - 파이프라고 한다고 함
+            orange 클래스를 가지고 있거나
+            orange-로 시작하는 모든 요소
+        */
+        a[class|="orange"]{
+            color:orange;
+        }
+        /* 공백을 기준으로 banana 속성을 가지고 있는 모든 요소 */
+        a[class~="banana"]{
+            color:darkolivegreen
+        }
+
+        /* class 속성 값이 dummy로 시작하는 모든 요소 */
+        div[class^="dummy"]{
+            background-color: red;
+            color:#fafafa;
+        }
+
+        /* class 속성 값이 end로 끝나는 모든 요소 */
+        div[class$="end"]{
+            background-color: #8792ee;
+        }
+
+        /* class 속성 값이 어떻게 조합되든 상관없이 
+        grape만 완성되면 무조건 선택 */
+        div[class*="grape"]{
+            background-color: #8972ee;
+        }
+    </style>
+</head>
+<body>
+    <!-- href="#" : 현재 페이지에 아직 링크이동 할거 없을 때 넣어둠 -->
+    <a href="#" target="_blank">link</a> 
+    <a href="#" target="_self">link</a>
+    <a href="#" >link</a>
+    <br /><hr />
+
+    <h3></h3>
+    <a href="#" class="apple">class="apple"</a>
+    <a href="#" class="apple_pine">class="apple pine"</a>
+    <a href="#" class="pine-apple">class="pine-apple"</a>
+    <br /><hr />
+
+    <a href="#" class="orange">orange</a>
+    <a href="#" class="red orange">orange</a>
+    <a href="#" class="red_orange">orange</a>
+    <a href="#" class="orange-red">orange</a>
+    <br /><hr />
+
+    <a href="#" class="banana">content</a>
+    <a href="#" class="monkey banana">content</a>
+    <a href="#" class="monkey-banana">content</a>
+    <br /><hr />
+
+    <div class="dummy">dummy</div>
+    <div class="dummy test">dummy</div>
+    <div class="dummy-test">dummy</div>
+    <div class="dummy_test">dummy</div>
+    <div class="test dummy">dummy</div>
+    <div class="test_dummy">dummy</div>
+    <br /><hr />
+
+    <div class="end">dummy</div>
+    <div class="start end">dummy</div>
+    <div class="ok_end">dummy</div>
+    <div class="end bey">dummy</div>
+    <br /><hr />
+
+    <!-- div.grape{dummy}*5 -->
+    <div class="grape">dummy</div>
+    <div class="tasty grape">dummy</div>
+    <div class="grape-tasty">dummy</div>
+    <div class="tastygrape">dummy</div>
+    <div class="tastyGrape">dummy</div>
+</body>
+</html>

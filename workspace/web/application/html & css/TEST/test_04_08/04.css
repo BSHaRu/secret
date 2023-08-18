@@ -1,0 +1,74 @@
+/*
+	4.html 의 css 작성
+*/
+
+*{
+	margin: 0;
+	padding : 0;
+}
+
+body{
+	text-align : center;
+	width: 1100px;
+	margin: 10px auto;
+}
+/* div#wrap{
+	width: 100%;
+	min-height: 300px;
+} 
+.wrap 이 아니라 #wrap이라서 어짜피 적용이 안되는 상황
+-> 이미 body에 속성값들을 줘서 있으나 없으나 결과는 똑같음 ㅇㅇ;*/
+
+h1{
+	padding: 10px;
+}
+
+header, article, footer {
+	background-color: rgb(243, 107, 17);
+}
+
+aside, section{
+	float : left;
+	padding: 10px;
+	height: 500px;
+	box-sizing: border-box;
+}
+
+aside > nav {
+	margin : 10px;
+}
+
+nav {
+	background-color: green;
+}
+
+main{
+	background-color: darkgray;
+}
+aside{
+	width : 20%;
+	background-color: skyblue;
+}
+
+section{
+	width: 60%;
+	background-color: pink;
+}
+
+article{
+	float: center;
+	margin: 10px auto;
+	padding: 0 15px;
+	width: 90%;
+	height: 400px;
+	
+}
+
+footer{
+	clear: both;
+	height: 70px;
+}
+
+footer > h1{
+	padding: 0px
+}

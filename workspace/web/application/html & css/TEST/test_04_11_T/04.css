@@ -1,0 +1,52 @@
+/*
+	4.html 의 css 작성
+*/
+
+.wrap{
+	padding: 0;
+	width: 1100px;
+	margin: 0 auto;
+	background-color: lightgray;
+}
+
+header{
+	background-color: lightsalmon;
+	overflow: hidden;
+}
+
+nav{
+	background-color: lightgreen;
+}
+
+aside, section{
+	float: left;
+	height: 700px;
+	padding: 1%;
+	box-sizing: border-box;
+}
+
+aside{
+	width: 25%;
+	background-color: skyblue;
+}
+
+section{
+	width: 50%;
+	background-color: mistyrose;
+}
+article{
+	background-color: coral;
+	height: 500px;
+}
+
+footer{
+	background-color: aquamarine;
+	clear: left;
+	/* 지금은 float에서 right가 없기때문에 both를 하던 left를 하던 똑같은 결과값이 나옴
+	both는 right와 left를 둘다 지우는 역할을 함 */
+	height: 70px;
+}
+
+h1, h2{
+	text-align: center;
+}

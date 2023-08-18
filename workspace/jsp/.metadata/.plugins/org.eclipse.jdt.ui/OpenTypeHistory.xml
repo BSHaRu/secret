@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;service{MemberService.java[MemberService" modifiers="513" timestamp="1657175568081"/>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;repositories{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1657008731849"/>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;service{ManagementService.java[ManagementService" modifiers="513" timestamp="1657156282243"/>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;service{NoticeService.java[NoticeService" modifiers="513" timestamp="1657160385547"/>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;repositories{NoticeDAO.java[NoticeDAO" modifiers="513" timestamp="1657160385545"/>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;service{QNABoardService.java[QNABoardService" modifiers="513" timestamp="1657501600909"/>
+    <typeInfo handle="=22_final_mvc/src\/main\/java&lt;repositories{QNABoardDAO.java[QNABoardDAO" modifiers="513" timestamp="1657501622151"/>
+</typeInfoHistroy>

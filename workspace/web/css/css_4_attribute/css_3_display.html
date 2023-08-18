@@ -1,0 +1,40 @@
+<!-- css_3_display.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>display</title>
+    <style>
+        h1{
+            background-color: skyblue;
+            margin-bottom: 30px;
+            width: 200px;
+            height: 200px;
+            display: block; /* 기본적으로 이게 생략이 되어있다. */
+            display: inline;
+            display: inline-block; 
+        }
+
+        h1.none{
+            display: none;
+        }
+
+        h1.hidden{
+            /* visible : 보여줌 | hidden : 숨김 */
+            visibility: hidden;
+        }
+        /* display:none과 visibility: hidden차이점
+        none : 아에 화면에서 사라지는 것
+        hidden : 화면에서 보이진 않지만, 공간은 남아있는 것
+        */
+    </style>
+</head>
+<body>
+    <!-- h1{Block 요소 $}*5 -->
+    <h1>Block 요소 1</h1>
+    <h1 class="none">Block 요소 2</h1>
+    <h1>Block 요소 3</h1>
+    <h1 class="hidden">Block 요소 4</h1>
+    <h1>Block 요소 5</h1>
+</body>
+</html>

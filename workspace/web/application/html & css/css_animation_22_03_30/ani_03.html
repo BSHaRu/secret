@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>trun_word</title>
+    <style>
+        .wrap{
+            position: relative;
+            border: 1px solid black;
+            width: 980px;
+            height: 300px;
+
+        /* flex는 나중에 다시 배울꺼임 */
+            display: flex;
+        /* justify-content: 자식 요소 위치를 정렬 해주는 친구 */
+            justify-content: center;
+        /* align-items : 세로 선 기준으로 정렬 해주는 친구  */
+            align-items: center;
+        }
+
+        .word{
+            position: absolute;
+            border: 1px solid black;
+            width: 80px;
+            height: 20px;
+        /*  left: 50%;
+            top: 50%;
+         < width랑 height값을 절반을 줘야 중앙 정렬됨 >
+            margin-left: -40px;
+            margin-top: -10px; */
+            text-align: center;
+            animation: rotate 2s linear infinite alternate;
+        }
+        @keyframes rotate{
+            0%{
+                transform:rotateY(0deg);
+            }
+            50%{
+                transform:rotateY(180deg);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="word">KOREATE</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!-- 10_animate.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $("#box1").css({
+                width : 100,
+                height : 100,
+                backgroundColor : "red"
+            });
+
+            $("#box1").animate({
+                width: 300,
+                height : 300,
+                opacity : 0.5
+            },2000,function(){
+                // alert("#box1 animate 종료");
+                console.log("#box1 animate 종료");
+            });
+
+            $("#box2").css({
+                width: 100,
+                height: 100,
+                background : "blue",
+                position : "absolute",
+                top : 200,
+                left : 50
+            }).animate({
+                width: 300,
+                height : 300,
+                opacity : 0.1
+            },1000).delay(500).animate({
+                left : 300,
+                top : 300,
+                opacity : 1
+            },1000);
+
+            function animateEvent(){
+                $("#box3").css({
+                    width: 100,
+                    height : 100,
+                    background : "#8972ee",
+                    position : "absolute",
+                    top : 100,
+                    left : 500
+                }).animate({
+                    width: 300,
+                    height: 300,
+                    opacity: 0.5,
+                    top: 150,
+                    left: 300
+                },1000).animate({
+                    width:100,
+                    height:100,
+                    opacity:1,
+                    top:100,
+                    left:500
+                },1000);
+            }
+
+            let anim = setInterval(animateEvent,2000); // 계속 반복하면서 해당 함수를 2초동안 반복해라
+
+            $("#box3").click(function(){
+                // 현재 [animate1] [animate2] 이렇게 2개 들어가 있음
+                /* $(this).stop(clearQueue,goToEnd); -> true, false값 적음
+                    clearQueue : true - 모든 animate를 무시
+                                false - 현재 animate까지만 보여주고 나머지 진행
+                    goToEnd : true - 현재 animate 효과의 최종본을 바로 보여줌
+                            false - 해당 animate 즉시 종료
+                    지금은 interval 때문에 무한반복이 되는거임 ㅇㅇ
+                */
+                $(this).stop(false,false); // https://jmjmjm.tistory.com/13 참고
+                clearInterval(anim);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>

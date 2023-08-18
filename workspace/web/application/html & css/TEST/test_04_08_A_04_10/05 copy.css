@@ -1,0 +1,37 @@
+header nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+header nav ul li{
+    text-align: center;
+    background-color: gray;
+    border: 1px solid white;
+    border-right: none;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding : 10px 0;
+}
+
+header nav ul li:last-child{
+    border-right : 1px solid white;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color : #fafafa;
+}
+
+header nav ul li:hover{
+    background-color: #fafafa;
+}
+
+header nav ul li:hover a{
+    color: gray;
+}
+
+header nav{
+    margin : 10px;
+    padding : 10px;
+}

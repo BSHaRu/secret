@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+	/**
+	 * 시점 : run button click 시
+	 * 대상 : div.target 
+	 * 기능 : 자식 요소가 없는 div 제거
+	 * 함수 : not(), :parent, remove()
+	 */
+	
+		$(function(){
+			$('[value="run"]').click(function(){
+		// 대상 요소들중 내부에 요소를 가지지 않는 요소(부모가 아닌 요소)
+				// $(".target:not(:parent)").remove();
+				// $(".target:not(:has(span))").remove(); // span태그를 가지지 않는 요소 제거 == 결과값은 위와 동일
+				// $(".target").not(":parent").remove();
+
+				// .target 요소중 비어있는 요소를 제거
+				// $(".target:empty").remove();
+
+				// span의 부모 삭제
+				$("span").parent().remove(); // 결과값은 이것만 다르고 위에 4개는 똑같음
+
+				
+			});
+		});
+
+	</script>
+
+</head>
+
+<body>
+	<div class="target"
+		style="color: rgb(85, 85, 85); width: 115px; height: 60px; float: left; border: 1px solid rgb(136, 136, 136); background-color: rgb(255, 182, 193); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		<br
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">
+		<span
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">span</span>
+	</div>
+	<div class="target"
+		style="color: rgb(85, 85, 85); width: 115px; height: 60px; float: left; border: 1px solid rgb(136, 136, 136); background-color: rgb(255, 182, 193); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		<br
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">
+		<span
+			style="margin: 5px; background-color: rgb(255, 238, 221); padding: 3px; border: 1px solid rgb(255, 170, 153); background-position: initial initial; background-repeat: initial initial;">span</span>
+	</div>
+	<div class="target"
+		style="color: rgb(85, 85, 85); width: 115px; height: 60px; float: left; border: 1px solid rgb(136, 136, 136); background-color: rgb(255, 182, 193); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;"></div>
+	<div class="target"
+		style="color: rgb(85, 85, 85); width: 115px; height: 60px; float: left; border: 1px solid rgb(136, 136, 136); background-color: rgb(255, 182, 193); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;"></div>
+	<input type="button" value="run"/>
+</body>
+</html>

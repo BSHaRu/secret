@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>숫자 맞추기 게임_ex05</title>
+    <script>
+        let isRun = true; // 반복 탈출 flag
+        let guess = 78; // 임의의 수(정답)
+        guess = parseInt(Math.random() * 100)+1; // 실행할 때 마다 1~100까지 랜덤한 숫자가 변경
+        /* parseInt() : ()의 값을 정수로 변환 
+        Math.random() : 0 ~ 0.999999999999.... 랜덤한 수를 제공
+        -> 0.99999.. * 100 = 99.9999.. 인데 perseInt()때문에 소수점을 다날라감
+        => 99 + 1 = 100 즉 1~100까지 랜덤한 숫자가 생성
+        */ 
+        console.log(guess);
+        let result = ""; // 결과값
+        let count = 0; // 반복 횟수(추측 횟수)
+
+        /* do - while문
+        -> 해당이 참이던 거짓이던 상관없이 무조건 1회는 실행 시켜주는 반복문
+        */
+        do{
+            let input = prompt("1~100까지의 정수를 입력해주세요.");
+            // js_ex_01_if_trim.html 여기서 해당 내용 했었음
+            if(input == "" || input == null || isNaN(input)){ 
+                alert("1~100까지의 정수만 입력가능합니다.");
+                continue;
+            }
+            if(input == guess){
+                result = "성공입니다.";
+                isRun = false; // 성공했기때문에 반복문 벗어나기
+            }else if(input < guess){
+                result = "낮습니다.";
+            }else{
+                result = "높습니다.";
+            }
+            count++;
+            alert(result+" 추측횟수 : "+count);
+        }while(isRun);
+    </script>
+</head>
+<body>
+</body>
+</html>

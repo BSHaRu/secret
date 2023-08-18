@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form name="loginForm" action="16_dom_event_default.html" method="get">
+        ID : <input type="text" name="id" id="id" /> <br/>
+        PW : <input type="password" name="pw" id="pw" /><br/>
+        <input type="button" value="전송" id="btn" />
+    </form>
+
+    <script>
+        let id = document.getElementById("id");
+        let pw = document.getElementById("pw");
+        let btn = document.getElementById("btn");
+
+        id.onkeydown = function(event){
+            let keyName = event.key;
+            let keyCode = event.keyCode;
+            console.log(`key : ${keyName}, keyCode : ${keyCode}`);
+            if(keyCode == 13){ // 13은 아스키코드에서 엔터를 의미함
+                checkValue(id);
+                // 비밀번호 작성란 포커스 적용
+                pw.focus();
+            } // 엔터키를 누르면 pw칸으로 포커스를 이동해라
+        }
+
+        pw.onkeydown = function(event){
+            if(event.key == "Enter"){
+                if(checkValue(id) && checkValue(pw)){
+                    document.loginForm.submit();
+                }
+            }
+        }
+
+        function checkValue(obj){
+            // obj == id || pw 값을 의미함 
+            console.log(obj.value.length);
+            if(obj.value.length == ""){ // id나 pw가 8글자 이하면 해당구문 실행
+                alert("작성란이 비어있습니다.");
+                obj.focus(); // 그럼 경고창 뜨고 해당 입력칸으로 포커스 해라
+                return false;
+            }
+            return true;
+        }
+
+        btn.onclick = function(){
+            if(checkValue(id) && checkValue(pw)){
+                document.loginForm.submit();
+            }
+        }
+    </script>
+</body>
+</html>

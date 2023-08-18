@@ -1,0 +1,40 @@
+article > h2{
+    padding: 15px 0;
+}
+
+table{
+    padding : 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #fafafa;
+    border-collapse: collapse;
+}
+
+table td, table th{
+    text-align: center;
+    padding: 0 20px;
+    border-bottom: 1px solid white;
+}   
+
+.notice{
+    /* display : block을 잡으면 table 요소가 아니라 div 요소로 바뀌기 때문에
+    border-collapse를 잡아도 radius가 먹히게 된다.
+    -> display : block을 안잡으면 radius는 안먹힘
+    */
+    display: block;
+    border: 1px solid white;
+    border-radius: 5px 5px 0 0;
+}
+
+tr td a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+tr.tableText:hover{
+    background-color: white;
+}
+tr.tableText:hover a{
+    color : #121212;
+}

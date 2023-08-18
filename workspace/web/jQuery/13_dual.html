@@ -1,0 +1,50 @@
+<!-- 13_dual.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>드래그 이벤트</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 600px;
+            background-color: coral;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // drag
+        $(function(){
+            // dragenter : 드래그 상태로 해당 컨텐츠위에 들어 왔을 때
+            $("#box").on("dragenter",function(event){
+                $("#log").html("drag enter");
+                event.preventDefault(); 
+            });
+
+            // dragover : 드래그 상태로 해당 컨텐츠에서 움직일 때
+            $("#box").on("dragover",function(event){
+                $("#log").html("drag over");
+                event.preventDefault();
+            });
+
+            $("#box").on("drop",function(event){
+                $("#log").html("drop!");
+                event.preventDefault();
+                let files = event.originalEvent.dataTransfer.files;
+                console.log(files); // 드래그 앤 드랍으로 파일 업로드 할 때 사용됨
+            });
+
+            // #testFile의 속성값이 바꼈을 때 해당구문 실행
+            $("#testFile").on("change",function(){
+                console.log(this.files);
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- h1#log+div#box+input:file#testFile -->
+    <h1 id="log"></h1>
+    <div id="box"></div>
+    <input type="file" id="testFile">
+</body>
+</html>

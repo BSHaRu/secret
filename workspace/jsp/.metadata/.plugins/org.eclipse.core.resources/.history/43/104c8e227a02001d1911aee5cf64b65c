@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*, utils.*" %>      
+<!-- 게시글 삭제 요청 처리 -->
+<% 
+	String num = request.getParameter("boardNum");
+
+	Connection conn = DBCPUtil.getConnection();
+	PreparedStatement pstmt = null;
+	String msg = "";
+	
+	try{
+		String sql = "DELETE FROM test_board "
+				 	+" WHERE boardNum = " + num;
+		pstmt = conn.prepareStatement(sql);
+		int result = pstmt.executeUpdate();
+		msg = (result > 0) ? "삭제 완료" : "삭제 실패";
+	}catch(Exception e){
+		e.printStackTrace();
+		msg = "삭제도 못하는 찐따 쉨";
+	}finally{
+		DBCPUtil.close(pstmt,conn);
+	}
+%>
+<!-- 게시글 삭제 요청 결과 처리 -->
+<script>
+	alert('<%=msg%>');
+	location.href="board_list_page.jsp";
+</script>
+    
+    

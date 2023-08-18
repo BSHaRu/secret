@@ -1,0 +1,53 @@
+<!-- 03_dom_mod_text.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div id="ex">
+        <b>여기가 div로 선언되었습니다.</b>
+    </div>
+
+    <form>
+        <input type="text" name="exName" id="exName" />
+    </form>
+
+    <a href="#" onclick="get();">div 요소 내용 출력</a>
+    <br/>
+    <a href="#" onclick="set();">div 요소 내용 변경</a>
+
+    <script>
+        function get(){
+            // alert('get() 호출'); 확인해보기 위해 test 용으로 씀
+            let ex = document.getElementById("ex");
+            console.log(ex);
+            console.log(ex.innerHTML);   // html의 태그까지 보여줌
+            console.log(ex.textContent); // 사용자에게 보여지는 컨텐츠만 보여줌
+        }
+        /*
+            innerHTML : 태그를 인식함
+            textContent : 태그 인식 안하고 textContent만 보여줌
+            innerText : 공백이 아무리 많아도 1칸만 인식해서 보여줌
+            -> text 두개 다 사용자한테 보여지는건 똑같음(trim 적용)
+            (어짜피 html에 출력되다보니 사용자한테는 큰 차이 없음)
+            but, 해당 요소를 확인할 때 차이가 발생
+            ex) textContent : "바  아   압   줘" => "바  아   압   줘"
+                innerText : "바  아   압   줘" => "바 아 압 줘"
+            => 자세한건 04_dom_mod_content.html 실행시켜보면 확인가능
+        */
+
+        function set(){
+            // alert('set() 호출'); 확인해보기 위해 test 용으로 씀
+            let ex = document.getElementById("ex");
+            let exName = document.getElementById("exName");
+            console.log(exName.value);
+            // ex.textContent = exName.value;
+            // <span>003030</span>
+            ex.innerHTML=exName.value; 
+            
+        }
+    </script>
+</body>
+</html>

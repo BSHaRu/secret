@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.TilePane?>
+
+<!-- orientation="VERTICAL" prefRows="3"  -->
+<TilePane orientation="HORIZONTAL" prefColumns="3" 
+hgap="10.0" prefTileHeight="100.0" prefTileWidth="100.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit4.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit5.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit6.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit8.jpg" />
+         </image>
+      </ImageView>
+      <ImageView>
+         <image>
+            <Image url="@image/fruit9.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</TilePane>

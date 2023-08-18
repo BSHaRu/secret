@@ -1,0 +1,120 @@
+<!-- html_1_tag_form.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>form</title>
+</head>
+<body>
+   <form action="../test.html" method="get">
+    <!-- <form action="../test.html" method="post"> -->
+        <input type="text" name="id" required /> <br />        
+        <input type="text" name="temp1" value="100" disabled /> <br />        
+        <input type="text" name="temp2" value="200" readonly /> <br /> 
+        <!-- 
+            required : 꼭 입력 해야 작동이 됨
+            disabled 사용 안하겠다 / 불투명에 입력안됨
+            readonly 읽기 전용 / 입력이 안됨
+        -->
+        <!-- 
+            disable와 readonly의 차이점
+            disable은 데이터 전송할 때 아에 전달이 안됨
+            readonly는 데이터 전송할 때 전달은 됨
+            ->둘 다 수정 불가는 동일
+        -->
+        <input type="password" name="pw" placeholder="비밀번호를 작성해주세요." />
+        <!-- placeholder : 해당 입력칸에 뭐 입력해라고 하는지 표시해줌
+        ->사용자가 입력 하면 해당 문구는 사라짐 -->
+        <br />
+        
+        <label> <!-- label : 해당 문자를 클릭해도 체크가 되게 해줌-->
+            <input type="checkbox" name="accept" /> 개인정보 이용에     동의하시겠습니까?
+        </label>
+        <br />
+        <hr />
+
+        <input type="checkbox" name="dogs" value="jindo" /> 진돗개
+        <input type="checkbox" name="dogs" value="poodle" /> 푸들
+        <input type="checkbox" name="dogs" value="poong" /> 풍산개
+        <br />
+        <hr />
+
+        <input type="radio" name="car" value="아반떼" checked /> 아반떼
+        <input type="radio" name="car" value="k3" /> k3
+        <br />
+        <hr />
+        
+        <fieldset>
+            <legend>SELECT BOX</legend>
+            <select>
+                <option>오렌지</option>
+                <option selected>사과</option>
+                <option>한라봉</option>
+            </select>
+            <select name="hobby"> 
+                <optgroup label="Game">
+                    <option>LoL</option>
+                    <option>고급시계</option>
+                    <option>로스트아크</option>
+                    <option>갤러그</option>
+                </optgroup>
+                <optgroup label="study">
+                    <option>JAVA</option>
+                    <option>HTML</option>
+                    <option>경제</option>
+                </optgroup>
+            </select>            
+        </fieldset>
+        <br />
+        <hr /> 
+
+        <!-- 일정 텍스트를 입력하면 자동완성 시켜주는 입력태그 -->
+        <input list="depList" />
+        <datalist id="depList">
+            <option value="컴퓨터공학과"></option>
+            <option value="국어국문학과"></option>  
+            <option value="경영학과"></option>
+            <option value="사회체육학과"></option>                
+        </datalist>
+        <br />
+
+        <!-- 해당 내용이 미리 입력되어 있는 태그 / 대량의 텍스트 작성 -->
+        <textarea name="content" cols="40" rows="20">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam fuga, esse consequatur nisi cupiditate rem, illum voluptates perspiciatis vel consectetur aperiam ducimus doloremque laudantium nobis, in aliquam repudiandae officiis fugiat?</textarea>
+        <!-- cols : 폭 / rows : 길이(줄 수) -->
+        <br />
+        <hr />
+
+        <input type="file" accept="image/*" /> 
+        <!-- /*는 모든 파일을 의미-->
+        <input type="file" accept=".pdf" />
+        <!-- 확장자가 pdf파일만 선택하겠다. -->
+        <input type="file" multiple />
+        <!-- 여러파일 동시에 선택가능함 -->
+        <br />
+
+        <fieldset>
+            <legend>HTML5 특수 입력 양식</legend>
+            <input type="email" required /> <br />
+            <input type="number" name="age" /> <br />
+            <input type="date" name="regdate" /> <br />
+            <input type="color" name="color" /> <br />
+            <input type="range" min="-50" max="100" value="0" name="score" /> <br />
+            <!-- range의 기본 범위는 0~100임 -->
+            <input type="search" name="search" /> <br />
+            <!-- search는 아직까지 크롬이랑 오페라에서만 지원 -->
+        </fieldset>
+        <br />
+        <hr />
+
+        <input type="hidden" name="a" valube="b" />
+        <!-- hidden은 기본적으로 출력은 안되지만, 코드내용은 남음 -->
+        <input type="button" value="눌러보세요" />
+        <!-- button은 기본적으로 아무런 능력이 없음
+        자바스크립트를 이용해야 해당 내용에 의미를 줄 수 있음 -->
+
+        <hr />
+        <input type="submit" value="제출" /> <br />
+
+    </form>
+</body>
+</html>

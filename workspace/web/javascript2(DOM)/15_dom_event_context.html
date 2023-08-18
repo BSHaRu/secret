@@ -1,0 +1,21 @@
+<!-- 15_dom_event_context.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        function hideMenu(){
+            alert(`오른쪽 마우스 클릭(컨텍스트 메뉴 금지!)`);
+            return false;
+        }
+        document.oncontextmenu = hideMenu; // 함수 대입이기때문에 hideMenu()로 호출하면 안됨
+    </script>
+</head>
+<body>
+    <h3>context menu 금지</h3>
+    <hr/>
+    <p>마우스 우클릭이 금지됩니다.</p>
+    <img src="../img/iu.png" alt="iu" />
+</body>
+</html>

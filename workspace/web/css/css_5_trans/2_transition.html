@@ -1,0 +1,105 @@
+<!-- 2_transition.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        /* transition css속성을 변경 할 때 
+        애니메이션 속도를 조절하는 방법을 제공 */
+        .trans{
+            width:300px;
+            height: 300px;
+            background-color: skyblue;
+            transition-property: width height;
+            /* 해당값을 n초에 걸쳐서 보여주는 친구 */
+            transition-duration: 3s; 
+            /* n초 뒤에 해당 조건 보여주는 친구 */
+            transition-delay: 1s;
+            /* 종류가 많으니 따로 밑에서 확인하셈 */
+            transition-timing-function: steps(3,end);
+            transition: width 1s, height 2s, background-color 2s linear 0.5s;
+        }
+
+        .trans:hover{
+            width: 600px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        .stick{
+            width:20px;
+            height:20px;
+            margin:10px 0;
+            background-color: pink;
+            /* 변경되는 모든 디자인 속성 all */
+            transition-property: all;
+            transition-duration: 4s;
+        }
+        input[type="checkbox"]:checked ~ .stick{
+            width:100%;
+            background-color: #8792ee;
+        }
+        .stick1{
+            /* 처음에 빠르다가 나중에 느리게 */
+            transition-timing-function: ease;
+        }
+        .stick2{
+            /* 평범하게 */
+            transition-timing-function: linear;
+        }
+        .stick3{
+            /* 처음에 느리게 */
+            transition-timing-function: ease-in;
+        }
+        .stick4{
+            /* 처음에 빠르게 */
+            transition-timing-function: ease-out;
+        }
+        .stick5{
+            /* 처음에 느리다가 나중에 빠르게 */
+            transition-timing-function: ease-in-out;
+        }
+        .stick6{
+            /* 처음부터 적용 */
+            transition-timing-function: step-start;
+        }
+        .stick7{
+            /* 마지막에 적용 */
+            transition-timing-function: step-end;
+        }
+        .stick8{
+            /* n번 동안 끊어서 적용*/
+            transition-timing-function: steps(3,start);
+        }
+        .stick9{
+            /* n-1번 동안 끊어서 적용 */
+            transition-timing-function: steps(3,end);
+        }
+    </style>
+</head>
+<body>
+    <div class="trans"></div>
+    <br/><hr/>
+    <input type="checkbox" />체크!
+    <!-- (p+div.stick.stick$)*9 -->
+    <p>ease</p>
+    <div class="stick stick1"></div>
+    <p>linear</p>
+    <div class="stick stick2"></div>
+    <p>ease-in</p>
+    <div class="stick stick3"></div>
+    <p>ease-out</p>
+    <div class="stick stick4"></div>
+    <p>ease-in-out</p>
+    <div class="stick stick5"></div>
+    <p>step-start</p>
+    <div class="stick stick6"></div>
+    <p>step-end</p>
+    <div class="stick stick7"></div>
+    <p>steps(3,start)</p>
+    <div class="stick stick8"></div>
+    <p>steps(3,end)</p>
+    <div class="stick stick9"></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!-- css_5_font.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>font</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        span{
+            font-size:16px;
+            /* pt = inch */
+            font-size:12pt;
+            font-size:1em;
+            font-size:100%;
+            
+            font-size: 200%;
+        }
+
+        .font{
+            font-size:40px;
+            font-weight:bold;
+            font-weight:normal;
+/*
+        lighter     normal      bold    bolder
+number   100,200,300,400,500,600,700,800,900
+부모가 가진 속성값 기반으로 lighter ~ bolder 등이 적용된다.       
+*/
+    /* 글꼴이 Arial가 없다면 Times, 이것도 없으면 다음껄로 지정 */
+            font-family: Arial, Times, sans-serif;
+            /* 이탤릭체 글꼴 사용 */
+            font-style: italic;
+            /* 기울어짐 글꼴 사용 */
+            font-style: oblique;
+        }
+
+        .child{
+            font-weight: bolder;
+            /* variant : 대문자로 바꿔줌 */
+            font-variant: small-caps;
+        }
+
+        .third{
+            font-weight: lighter;
+        }
+
+        .box{
+            width:500px;
+            height:500px;
+            border:1px solid black;
+            /* text 간격 */
+            text-align: right;
+            text-align: center;
+            /* 줄 간격 */
+            line-height: 250px;
+        }
+
+        .box .content{
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 2em;
+            /* 글자 간격 */
+            letter-spacing: 10px;
+            /* 단어 간격(스페이스) */
+            word-spacing: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="font">
+        HELLO HTML
+        <div class="child">
+            Hello Html
+            <div class="third">
+                hello html
+            </div>
+        </div>
+    </div>
+    <span>font size</span>
+    <br /><hr />
+    <div class="box">
+        <span class="content">Content Space</span>
+        <br />
+        <span class="content">Content Space</span>
+    </div>
+</body>
+</html>

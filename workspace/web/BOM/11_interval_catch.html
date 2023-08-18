@@ -1,0 +1,53 @@
+<!-- 11_interval_catch.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        #box{
+            position: absolute;
+            top : 0;
+            left : 0;
+            width: 70px;
+            height: 70px;
+            background-color: #8972ee;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onclick="catchBox(this);">잡아랏!</div>
+    
+    <script>
+        let x = 0 , y = 0;
+        let interval = window.setInterval(function(){
+
+            let top = 0, left = 0; // window.top이 있기에 지역변수로 만듬
+            
+            let box = document.getElementById("box");
+            // 브라우저가 사용 가능한 높이
+            top = screen.availHeight;
+            // 브라우저가 사용 가능한 너비
+            left = screen.availWidth;
+            console.log(top);
+            console.log(left);
+
+            x = parseInt(Math.random()*top);
+            y = parseInt(Math.random()*left);
+            console.warn(x);
+            console.warn(y);
+
+            box.style.top = x+"px";
+            box.style.left = y+"px";
+        },500);
+
+        function catchBox(box){
+            box.innerHTML = "잡았다 요놈!";
+            box.style.backgroundColor = "red";
+            box.style.color="white";
+
+            clearInterval(interval);
+        }
+    </script>
+</body>
+</html>

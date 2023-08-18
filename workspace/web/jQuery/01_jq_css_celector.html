@@ -1,0 +1,32 @@
+<!-- 01_jq_css_celector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // document.getElementById('header'); == $("#header");
+        $(function(){ // == $(document).ready(function(){}); 
+            $("#header").css('color', 'lightgreen');
+            $("#header").css('background-color', 'yellow');
+        
+        // document.getElementsByClassName("header"); == $(".header");
+            $(".header").css("color","white");
+            $(".header").css("background-color","red");
+        
+        // document.getElementsByTagName("h1") ==  $("h1");
+            $("h1").css("color","#8972ee");
+            $("h1").css("background-color","darkgray");
+        }); //문자열로 적용이라 "-(하이폰)" 사용이 가능하다.
+    </script>
+</head>
+<body>
+    <h1 class="header">HEADER - 1</h1>
+    <h1 class="header">HEADER - 2</h1>
+    <h1 id="header" class="header">HEADER - 3</h1>
+    <h1 id="header">HEADER - 4</h1>
+</body>
+</html>

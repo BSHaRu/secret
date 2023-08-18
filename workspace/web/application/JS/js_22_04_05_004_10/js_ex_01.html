@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        let x = prompt("숫자를 입력해주세요!");
+        if(x % 3 == 0){
+            document.write(`${x}은(는) 3의 배수가 맞습니다.`);
+        }else{
+            document.write(`${x}은(는) 3의 배수가 아닙니다.`);
+        }
+        
+        //while 문 - 생각지도 못함 까먹고 있었음
+        while(true){
+            x = prompt("숫자를 입력해주세요.");
+            let answer = "숫자가 아닙니다.";
+            if(x == null){
+                alert(answer);
+                break;
+            }
+            x = x.trim();
+
+            if(x == "" || isNaN(x)){
+                alert(answer);
+                break;
+            }
+
+            if(x % 3 == 0){
+                answer = x+"은(는) 3의 배수입니다.";
+            }else{
+                answer = x+"은(는) 3의 배수가 아닙니다";
+            }
+            alert(answer);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

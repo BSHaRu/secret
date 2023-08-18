@@ -1,0 +1,33 @@
+<!-- 12_dom_event_focus.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    영어 단어 : <input type="text" onfocus="sub(this);" id="name" />
+
+    <script>
+        // focus가 되면 작성된 영문을 소문자로
+        // focus가 사라지면 작성된 영문을 대문자로
+        // focus를 얻었을 때 - onfocus
+        function sub(a){
+            let value = a.value;
+            console.log(value);
+            // toLowerCase : 지정된 문자열을 소문자로 변경하여 변환
+            let lower = value.toLowerCase();
+            console.log(lower);
+            a.value = lower;
+        }
+
+        document.getElementById("name");
+        // focus를 잃었을 때 - onblur
+        name.addEventListener('blur', function(){
+            // this == name
+            // toUpperCase : 지정된 문자열의 값을 대문자로 변환
+            this.value = this.value.toUpperCase();
+        });
+    </script>
+</body>
+</html>

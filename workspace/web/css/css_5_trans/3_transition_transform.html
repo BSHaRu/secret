@@ -1,0 +1,28 @@
+<!-- 3_transition_transform.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        .box{
+            border:1px solid black;
+            width:100px;
+            height:100px;
+            transition: width 2s, height 2s, transform 2s;
+        }
+        input[type="checkbox"]:checked + .box{
+            width:200px;
+            height: 200px;
+            transform:skew(720deg);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" />체크!
+    <!-- div.box{Hello}*2 -->
+    <div class="box">Hello</div>
+    <br/>
+    <div class="box">Hello</div>
+</body>
+</html>

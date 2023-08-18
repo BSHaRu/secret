@@ -1,0 +1,37 @@
+<!-- 14_object_new.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        // CSS6이전에 설계도 제작(Method) 방법.
+        function Car(model, speed, color){
+            this.model = model;
+            this.speed = speed;
+            this.color = color;
+
+            this.accel = function(){
+                this.speed += 10;
+            }
+
+            this.break = function(){
+                this.speed -= 10;
+            }
+        }
+
+        let aCar = new Car("GV80",0,"white");
+        let bCar = new Car("Benz",0,"black");
+        /* 같은 Car라도 aCar의 model(GV80)이랑 bCar model(Benz)는 각각
+        다른 공간에 저장되어 있다.
+        -> 이를 각각 instance에 저장 되어있다고 한다.      */
+
+        console.log(aCar.model);
+        console.log(bCar.model);
+        bCar.model = "Moning";
+        console.log(bCar.model);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,42 @@
+article{
+    padding: 10px;
+}
+
+article table{
+    width: 100%;
+    color: white;
+    /* border-collapse: collapse; */
+    border-spacing: 0;
+}
+/* border-collapse
+sepalate : 셀 사이 분리 (기본값)
+collapse : 셀 사이를 상쇄 -> 공간을 합쳐버리는 거림
+=>이걸 여기에 적용 시키면 마지막 border-radius 적용이 안됨
+그래서 border-spacing 0으로 줘서 그냥 처음부터 셀 거리를 안주는거임
+*/
+
+article table tr td {
+    text-align: center;
+    height: 30px;
+    border-bottom: 1px solid white;
+}
+
+article table tr:nth-child(2) th{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    height: 25px;
+}
+
+table tr:first-child th{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+article table tr:hover td{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}

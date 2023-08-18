@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>04</title>
+</head>
+<body>
+    <!-- table[border="1"]>(tr>th[colspan="2"])((tr>td*2)*6)(tr>td[colspan="2"]) 자동완성 단축키 ctrl + 스페이스-->
+    <table border="1">
+        <tr>
+            <th colspan="2">회원가입</th>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="email" value="neo.naver.com" /></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" value="네오" /></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" value="1234" /></td>
+        </tr>
+        <tr>
+            <td>비밀번호 확인</td>
+            <td><input type="password" value="1234" /></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <label>
+                    <input type="radio" name="gender" /> 남성
+                    <input type="radio" name="gender" checked/> 여성
+                    <!-- value값을 안적어도 출력값에는 큰 차이 없지만,
+                    나중에 데이터 전달 할 때는 써 줘야 됨 -->
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>나이</td>
+            <td>
+                <input type="number" name="age" placeholder="숫자를 입력해주세요." /> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="제출"/>
+            <!-- <input type="button" value="제출"/>
+                <button>제출</button>                 
+                <button type="submit">제출</button> -> 바로 윗줄 주석과 동일한 값
+                <button type="button">제출</button>
+            -->
+            </td>
+        </tr>
+    </table>    
+
+
+</body>
+</html>

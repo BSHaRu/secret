@@ -1,0 +1,46 @@
+<!-- 01_js_variable.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script>
+        // 변수 선언
+        var global;
+        // 변수 초기화
+        global = 10;
+        // 브라우저 콘솔탭에 ()안의 값을 출력
+        console.log(global);
+        global = 20;
+        console.log(global);
+        // console.log(temp); 선언 되지 않은 변수는 사용 할 수 없음
+
+        /* 변수의 종류
+        primitive type(기본 타입) - 더이상 작은 단위로 나누어 질 수 없는 값
+        boolean - 논리 데이터 유형(true|false)
+        number - 숫자형 데이터(정수, 실수) 
+        string - 문자열 데이터
+        undefiend - 변수 선언 하였지만, 값이 지정 안된 타입(출력할 때 이 문구가 뜨면 해당 변수의 값을 확인해봐야됨)
+        null - 값이 비어 있다고 나타내는 자료형 변수
+        */
+       var bool = true;
+       var nuber = 273;
+       var str = '홍길동';
+       var str2 = "배고파";
+       var temp;
+       console.log(temp);
+       temp= null;
+        // 함수를 변수에 지정 할 수 도 있다.
+       var func = function sample(){
+           alert('함수');
+       }
+       // 객체 타입
+       var obj ={a : 'a', b : 'b'}; // 1개의 변수에 여러개를 저장해놓고 사용 가능
+
+    </script>
+</head>
+<body>
+</body>
+</html>

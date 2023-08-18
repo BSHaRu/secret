@@ -1,0 +1,45 @@
+<!-- css_4_background.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>background</title>
+    <style>
+        body{
+            background-image: url(../../img/apple.png);
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            background-repeat: no-repeat;
+            background-position: top right;
+            height: 1700px;
+            /* attachment : 엑셀에서 셀고정 하듯 
+            스크롤 움직여도 이미지는 고정됨 */
+            background-attachment: fixed;
+        }
+        .bg{
+            background-color: skyblue;
+            width: 300px;
+            height: 300px;
+        }
+
+        .img{
+            background-image: url(../../img/mango.png);
+            background-repeat: no-repeat;
+            /* 위아래는 top 좌우는 center */
+            background-position: top center; 
+            background-color: rgb(32,158,55);
+            background-size: 100px 50px;
+            /* 한번에 모든 속성 적용 방법 */
+            background: pink url(../../img/banana.png) no-repeat right top;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <img src="../../img/apple.png" width="200" height="200" />
+    </div>
+    <div class="img bg">
+        <span>Content Space</span>
+    </div>
+</body>
+</html>

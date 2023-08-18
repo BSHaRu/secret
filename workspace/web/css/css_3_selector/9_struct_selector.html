@@ -1,0 +1,100 @@
+<!-- 9_struct_selector.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>수열 선택자</title>
+    <style>
+        #wrap{
+            width:260px;
+            height:300px;
+            background-color: skyblue;
+        }
+
+        .box{
+            float:left;
+            width:30px;
+            height:30px;
+            border:1px solid black;
+            margin: 0 5px 5px 0;
+        }
+
+        /* 첫번째 요소 */
+        .box:first-child{
+            color: red;
+        }
+
+        /* 마지막 요소 */
+        .box:last-child{
+            color: blue;
+        }
+
+        /* 
+            특정 위치에 있는 태그 요소
+            시작 값은 1
+        */
+        .box:nth-child(2){
+            color: yellow;
+        }
+
+        .box:nth-child(7n){
+            color: #8972ee;
+        }
+
+        .box:nth-child(7n-1){
+            color: #fafafa;
+        }
+
+        /* 홀수 */
+        .box:nth-child(odd){
+            color:violet;
+        }
+
+        /* 짝수 */
+        .box:nth-child(even){
+            color:bisque;
+        }
+
+        /* 16번째부터 시작해서 19번째 까지 */
+        .box:nth-child(n+16):nth-child(-n+19){
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- div#wrap>div.box{$$}*31 -->
+    <div id="wrap">
+        <div class="box">01</div>
+        <div class="box">02</div>
+        <div class="box">03</div>
+        <div class="box">04</div>
+        <div class="box">05</div>
+        <div class="box">06</div>
+        <div class="box">07</div>
+        <div class="box">08</div>
+        <div class="box">09</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+        <div class="box">13</div>
+        <div class="box">14</div>
+        <div class="box">15</div>
+        <div class="box">16</div>
+        <div class="box">17</div>
+        <div class="box">18</div>
+        <div class="box">19</div>
+        <div class="box">20</div>
+        <div class="box">21</div>
+        <div class="box">22</div>
+        <div class="box">23</div>
+        <div class="box">24</div>
+        <div class="box">25</div>
+        <div class="box">26</div>
+        <div class="box">27</div>
+        <div class="box">28</div>
+        <div class="box">29</div>
+        <div class="box">30</div>
+        <div class="box">31</div>
+    </div>
+</body>
+</html>

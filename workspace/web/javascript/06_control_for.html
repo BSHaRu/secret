@@ -1,0 +1,110 @@
+<!-- 06_control_for.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>for</title>
+    <script>
+        // 증감식
+        let a = 1;
+        a = a + 1; // a += 1; a++, ++a
+        a = a + 10;
+        document.write(a+"<br/>");
+        a++;
+        document.write("a++; "+a+"<br/>");
+        --a;
+        document.write("--a; "+a+"<br/>");
+
+        let b = 1;
+        document.write("b : " + b + "<br/>");
+        // b = a가 b에 대입 된 이후 +1 됨
+        b = a++;
+        document.write("a : " + a + ", b : " + b+"<br/>");
+        // b = a가 +1된 상태에서 b에 대입됨
+        b = ++a;
+        document.write(`a : ${a}, b : ${b} <br/>`);
+        
+        // 반복문 - for 문
+        document.write("카운트 : ");
+        for(var i=0; i < 10; i++){
+            document.write(i + " ");
+        }
+        document.write("<br/>");
+        /* 
+        원래 문법 오륜데 var로 지정했기 때문에 해당 값이 나오는 거임
+        -> for문에서 i를 지정했기 때문에 for문에서만 i값이 사용되야함
+        */
+        document.write(`i : ${i} <br/>`); 
+
+        for(let j=1; j<=6; j++){
+            document.write("<h" + j +">");
+            document.write(j);
+            document.write("</h" + j + ">");
+        }
+        /*
+        for문에서 j값을 지정했기 때문에 let을 사용 했기때문에 j값을 찾을 수 없다(defined) 오류가 뜨는게 정상이다.
+        ->하지만 상황에 따라서 let이 아닌 var를 쓸 때도 있다.
+        */
+        //document.write(`j : ${j}`);
+
+        let sum = 0;
+        for(let j = 100; j > 0; j--){
+            sum += j;
+        }
+        document.write(`1~100까지의 합은 ${sum}`);
+
+        sum = 0;
+        for(let j = 1; j <= 100; j+=2){
+            sum +=j;
+        }
+        document.write("<br/>");
+        document.write(`1~100까지의 홀수 합은 ${sum}`);
+        // for문은 반복 횟수를 알 때 사용 되는 반복문
+
+        sum = 0;
+        for(let j = 1; j <= 100; j++){
+            if(j % 2 == 0){
+                sum += j;
+            }
+        }
+        document.write("<br/>");
+        document.write(`1~100까지의 짝수 합은 ${sum}`);
+
+        // break; 와 continue;
+        for(let k = 1; k <= 10; k++){
+            if(k % 2 == 1){
+                continue; // continue를 만나면 아랫쪽은 실행안됨
+            }
+            if(k == 6) {
+            // if(k == 7){ 
+                break; // 가장 가까운 반복문을 탈출 할 때 사용
+            }
+            document.write(k+"<br/>");
+        }
+
+        // 이중 for 문
+        for(let j = 1; j <= 5; j++){
+            for(let k=1; k<=5; k++){
+                document.write(j+" ");
+            }
+            document.write("<br/>");
+        }
+
+        //table tag를 이용한 구구단 표 그리기
+        document.write("<h1>구구단 표 </h1>");
+        document.write("<table border=2 width=50%>");
+        for(let j=2; j<=9; j++){
+            document.write("<tr>");
+            for(let k=1; k<=9; k++){
+                document.write(`<td>${j}*${k}=${j*k}</td>`);
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

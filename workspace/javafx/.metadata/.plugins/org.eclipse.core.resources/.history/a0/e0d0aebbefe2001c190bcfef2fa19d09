@@ -1,0 +1,121 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
+
+public class RootController implements Initializable {
+
+	@FXML private TextArea textArea;
+	@FXML private ComboBox<String> comboBox;
+	
+	private Stage primary;
+	
+	public void setStage(Stage stage) {
+		this.primary = stage;
+	}
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		comboBox.getSelectionModel().selectedIndexProperty().addListener((target, oldValue, newValue)->{
+			int index = newValue.intValue();
+			System.out.println("select comboBox : " + index);
+			switch(index) {
+				case 0 : 
+		    		// directory chooser (폴더 선택 상자) -> 확장자 지정안해줘도 됨
+					DirectoryChooser chooser = new DirectoryChooser();
+					File selectedDir = chooser.showDialog(primary);
+					if(selectedDir != null) {
+						for(File f : selectedDir.listFiles()) {
+							textArea.appendText(f.getName() + "\n");
+						} // if > for end
+					} // if end
+		    		break;
+		    	case 1 : 
+		    		// popUp window
+		    		break;
+		    	case 2 : 
+		    		// custom Window
+		    		break;
+		    	case 3 : 
+		    		// custom dialog
+		    		break;
+	    	} // switch end
+		});
+	}
+	
+	public void handleNew(ActionEvent e) throws IOException {
+		System.out.println("new");
+		textArea.appendText("New \n");
+		
+		Runtime rt = Runtime.getRuntime();
+		rt.exec("notepad"); // 실행창에서 "notepad"를 입력하면 메모장뜨는 그거 말하는거임
+	}						//-> 즉, 지금 new 누르면 메모장이 뜸
+	
+	public void handleOpen(ActionEvent e) throws IOException {
+		System.out.println("Opne");
+		textArea.appendText("Open \n");
+		
+		// FileChooser : 파일 선택 창
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.getExtensionFilters().addAll( 		// getExtensionFilters() : 확장자 정해주는거임
+			new ExtensionFilter("Text files","*.txt")	// ExtensionFilter(어떤 파일을 불러올껀지 대충 이름적음, 확장자)
+		);												// -> txt 파일만 보이게 설정함
+		File selectedFile = fileChooser.showOpenDialog(primary);
+		if(selectedFile != null) {
+			textArea.appendText(selectedFile.getPath() + "\n");
+			FileReader reader = new FileReader(selectedFile);
+			BufferedReader bReader = new BufferedReader(reader);
+			
+			String message = null;
+			while((message = bReader.readLine()) != null) {
+				textArea.appendText(message + "\n");
+			}
+			bReader.close();
+			reader.close();
+		}
+	}
+	
+	public void handleSave(ActionEvent e) throws Exception {
+		System.out.println("Save");
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.getExtensionFilters().add(
+			new ExtensionFilter("text files", "*.txt")
+		);
+		
+		File selectedFile = fileChooser.showSaveDialog(primary);
+		System.out.println(selectedFile.getPath());
+		if(selectedFile != null) {
+			FileWriter writer = new FileWriter(selectedFile);
+			BufferedWriter bWriter = new BufferedWriter(writer);
+			String message = textArea.getText();
+			bWriter.write(message);
+			bWriter.flush();
+			bWriter.close();
+			writer.close();
+		}
+	}
+	
+	public void handleClose(ActionEvent e) {
+		System.out.println("Close");
+		
+		primary.close(); // 무대 종료
+	}
+	
+}

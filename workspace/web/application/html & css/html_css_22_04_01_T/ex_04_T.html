@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>쌤풀이_HTML5 기본 프로젝트</title>
+    <!-- 여긴 전체적으로 기본 틀 잡는 style 적용 -->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: '맑은 고딕', 'Margun Gothic', Gothic, sans-serif;
+        }
+
+        body{
+            width: 960px;
+            margin: 0 auto;
+            background-color: #e6e6e6;
+        }
+
+        #page-wrapper{
+            background-color: #fafafa;
+            border-radius: 5px;
+            margin: 40px 0;
+            padding: 10px 20px;
+            /* box-shadow : x / y / blur-radius / color */
+            box-shadow: 0 2px 6px rgba(100,100,100,0.3);
+        }
+
+        a{text-decoration: none;}
+        li{list-style:none;}
+
+        .pull-left{
+            float:left;
+        }
+        .pull-right{
+            float:right;
+        }
+    </style>
+
+    <!-- 여기서 부터는 header -->
+    <style>
+        header#main-header{
+            padding:40px 50px;
+        }
+
+        .master-title{
+            font-family: "Arial Black", sans-serif;
+            font-size: 30px;
+            color:#181818;
+            text-shadow: 2px 4px 3px gray;
+        }
+
+        .master-description{
+            font-size: 15px;
+            /* 폰트 굵기 : normal */
+            font-weight: 500;
+            color:#383838;
+        }
+    </style>
+
+    <!-- nav -->
+    <style>
+        nav#main-navigation{
+            border-top:1px solid #c8c8c8;
+            border-bottom: 1px solid #c8c8c8;
+            height:40px;
+            margin-bottom: 20px;
+        }
+        .outer-menu-item{
+            float:left;
+            position: relative;
+        }
+
+        .outer-menu-item:hover{
+            background-color: black;
+            color: white;
+            cursor:pointer;
+        }
+
+        .outer-menu-item:hover .inner-menu{
+            display: block;
+        }
+
+        .inner-menu{
+            width: 100%;
+            display:none;
+            position: absolute;
+            background-color: white;
+            text-align: center;
+        }
+
+        .inner-menu-item > a{
+            display: block;
+            padding: 5px 10px;
+            color: black;
+        }
+        .inner-menu-item > a:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .menu-title{
+            /* menu-title이 span(인라인요소)이라서 block을 잡는거임 */
+            display:block;
+            height:30px;
+            /* height값과 line-height값이 동일하면 세로열이 가운데정렬됨 */
+            line-height:30px;
+            padding:5px 20px;
+            text-align: center;
+        }
+        /* 검색바 */
+        .search-bar{
+            height: 26px;
+            /* padding값을 7을 주어서 26+7+7해서 height는 총 40px이 됨 */
+            padding: 7px;
+        }
+        .input-search, .input-search-submit{
+            display: block;
+            float: left;
+        }
+        .input-search{
+            background-color: #fff;
+            width: 120px;
+            /* height에 24px를 줘야 border값 +@되어서 높이가 26이됨 */
+            height: 24px;
+            border:1px solid #c8c8c8;
+            /* 좌상 우상 우하 좌하 순임 */
+            border-radius: 15px 0 0 15px;
+            /* radius를 했기때문에 padding값을 줘서 검색하고자하는 내용 안가리게 하기 위해서 paddig-left를 주는거임 */
+            padding-left: 10px;
+            font-size: 12px;
+            color:#555;
+        }
+
+        .input-search:focus{
+            outline: 0;
+            border-color: rgba(82,168,236,0.8);
+        }
+        .input-search-submit{
+            width:50px;
+            height:26px;
+            border-radius: 0 15px 15px 0;
+            border:1px solid #ccc;
+        /* outline: none을 하면 브라우저의 기본 포커스 스타일이 사라짐 */
+            outline: none;
+            margin-left: -1px;
+        }
+    </style>
+
+    <!-- section -->
+    <style>
+        /* page-wrapper태그 크기 960px 
+           padding:20px
+           내용물 너비 : 920px */
+        
+        #content{
+            /* overflow : 자식속성이 부모요소 범위 초과 할 때 어떻게 처리 할지 결정 해줌
+
+            visible : 특정 요소가 박스를 넘어가도 그대로 보여줌
+            -> 크기 신경 안씀
+            
+            hidden :부모속성이 크기를 안가지고 있으면 해당 속성을 모두 보여주는 역할을 해준다 
+            ->원래 부모속성의 범위가 넘어가면 자식 요소의 부분은 잘라서 안보여주는 역할을 함
+            
+            scroll : 부모속성 범위를 넘어가면 스크롤바를 추가해서 보여줌
+            ->여기서는 aside값이 section과 footer 사이에 출력됨
+            
+            auto : 알아서 배치 시켜줌 -> 여기선 hidden이랑 동일한값 출력
+            */
+            overflow: hidden;
+        }   
+        #main-section{
+            float:left;
+            width:710px;
+        }
+        #main-aside{
+            float:right;
+            width:200px;
+        }
+    </style>
+
+    <!-- article -->
+    <style>
+        article{
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #c8c8c8;
+        }
+        
+        .article-header{
+            padding:20px 0;
+        }
+
+        .article-title{
+            font-size:25px;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        .article-date{font-size:13px;}
+        .article-body{font-size:14px;}
+    </style>
+
+    <!-- aside -->
+    <style>
+        .aside-list{
+            padding: 10px 0 30px 0
+        }
+        .aside-list > h3{
+            font-size:15px;
+            font-weight: 600;
+        }
+        .aside-list ul li a{
+            margin-left: 8px;
+            font-size: 13px;
+            color:#6c6c6c;
+        }
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+		<header id="main-header">
+            <hgroup>
+                <h1 class="master-title">HTML5 Example Preview</h1>
+                <h2 class="master-description">한국기술교육직업전문학교</h2>
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title">HTML5</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">CSS3</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">JavaScript</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <div class="search-bar">
+                    <form>
+                        <input type="text" class="input-search" />
+                        <input type="submit" class="input-search-submit" value="검색" />
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">HTML5 개요와 활용</h1>
+                        <p class="article-date">2018년 08월 21일</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://placeimg.com/430/280/nature/sepia" />
+                        <br />
+                        <br />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo justo ac lorem pretium vitae rhoncus lectus ullamcorper. Aliquam facilisis euismod diam sollicitudin commodo. Nunc sagittis sapien venenatis lorem vestibulum cursus pellentesque mi sodales. Donec pellentesque hendrerit turpis, vitae tempor nibh ultricies at. Aliquam consequat rutrum erat, vel sodales tellus sagittis at. Proin sollicitudin augue eu augue vehicula vitae bibendum odio porta. Aliquam elit arcu, venenatis in imperdiet ut, scelerisque non dolor. Donec in vulputate tortor. Fusce egestas rutrum mi quis ultricies. Vivamus blandit augue ac felis ullamcorper consectetur. Curabitur pretium fringilla neque, vitae cursus massa auctor vitae. Integer non massa sit amet lacus accumsan blandit. Vivamus fermentum tellus at justo iaculis eu tempus lorem venenatis. Suspendisse quis eros consectetur tellus posuere commodo. In hac habitasse platea dictumst.</p>
+                        <br />
+                        <p>Praesent orci quam, ornare sed scelerisque ac, porta a justo. Pellentesque quis magna sed magna vehicula semper ac ut enim. Duis ut mattis ligula. Mauris at sem elit. Vestibulum justo tortor, malesuada non tincidunt quis, feugiat ut metus. Maecenas varius neque ut diam ultrices scelerisque. Praesent lectus massa, tincidunt vel adipiscing non, vehicula ut magna. Cras quis lacinia ipsum. Sed consequat consectetur volutpat. Integer sed tortor risus. Donec accumsan ante vel justo porttitor volutpat.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">HTML5 응용과 실습</h1>
+                        <p class="article-date">2018년 08월 20일</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://placeimg.com/430/280/animals" />
+                        <br />
+                        <br />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo justo ac lorem pretium vitae rhoncus lectus ullamcorper. Aliquam facilisis euismod diam sollicitudin commodo. Nunc sagittis sapien venenatis lorem vestibulum cursus pellentesque mi sodales. Donec pellentesque hendrerit turpis, vitae tempor nibh ultricies at. Aliquam consequat rutrum erat, vel sodales tellus sagittis at. Proin sollicitudin augue eu augue vehicula vitae bibendum odio porta. Aliquam elit arcu, venenatis in imperdiet ut, scelerisque non dolor. Donec in vulputate tortor. Fusce egestas rutrum mi quis ultricies. Vivamus blandit augue ac felis ullamcorper consectetur. Curabitur pretium fringilla neque, vitae cursus massa auctor vitae. Integer non massa sit amet lacus accumsan blandit. Vivamus fermentum tellus at justo iaculis eu tempus lorem venenatis. Suspendisse quis eros consectetur tellus posuere commodo. In hac habitasse platea dictumst.</p>
+                        <br />
+                        <p>Proin ut fringilla sapien.</p>
+                    </div>
+                </article>
+            </section>
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer id="main-footer">
+            <a href="#">Created By Team-koreate</a>
+        </footer>
+    </div>
+</body>
+</html>

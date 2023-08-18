@@ -1,0 +1,53 @@
+<!-- 16_dom_event_default.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script>
+        function query(){
+            // window.confirm(); -> window는 전역객체라서 생략가능
+            let answer = confirm("naver로 이동하시겠습니까?");
+            return answer;
+        }
+
+        function noAction(e){
+            // 이벤트가 가진 기본 이벤트를 무시한다.
+            e.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <!-- 여기서 onclick="query();" 만 한다면 취소할 경우 false값을 반환을 안해서 취소를 눌러도 네이버로 이동하게 됨 -> 왜지??
+    return에 오류가 뜨는건 함수 안에서만 쓰는게 일반적이라서 뜨는거지 문법적 오류는 아니다.
+    -> Visual Studio에서만 빨간줄로 인식만 하는거지 코딩하는데는 큰 영향이 없다.
+    -->
+    <a href="https://naver.com" onclick="return query();">네이버로 이동할지 물어봄</a> 
+    <hr/>
+    <!-- method : 전송방식이 들어감 -> get과 post 방식 차이는 나중에...
+        action : submit 버튼이 눌러졌을때 action이 지정한 위치로 이동 
+    -->
+    <form name="myForm" action="https://naver.com" method="GET">
+        <input type="checkbox" name="eat" value="빵"> 빵<br/>
+        <input type="checkbox" name="eat" onclick="noAction(event);" value="술"> 술<br/>
+        <input type="submit" value="전송"> <!-- onclick="noAction(event);" -->
+        <input type="button" id="btn" value="진짜 전송" />
+    </form>
+
+    <script>
+        // name값을 지정해주면 body처럼 해당 태그를 바로 접근 가능
+        // -> document.form은 안됨??????
+        document.myForm.onsubmit = function(){
+            console.log(`submit 발생!`);
+            return false;
+        }
+
+        let btn = document.getElementById("btn");
+        btn.onclick = function(){
+            document.myForm.submit(); // submit 이벤트 강제로 발생
+        }
+    </script>
+</body>
+</html>

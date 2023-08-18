@@ -1,0 +1,13 @@
+SCRIPT_AREA_BORDER=\#D8D8D8 | null | null | null | null | null
+commentBorder=\#C7DD0C | null | null | false | null | null
+commentText=\#C7DD0C | null | null | false | null | null
+eclipse.preferences.version=1
+jsp_content=\#D8D8D8 | null | null | null | null | null
+newFileTemplateName=New JSP File (html 5)
+org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="jsp_new" deleted\="false" description\="" enabled\="true" name\="New_jstl_temp">&lt;%@ page language\="java" contentType\="text/html; charset\=UTF-8"&\#13;\r\n    pageEncoding\="UTF-8"%&gt;&\#13;\r\n&lt;jsp\:include page\="header.jsp" /&gt;&\#13;\r\n&lt;section&gt;&\#13;\r\n\t${cursor}&\#13;\r\n&lt;/section&gt;&\#13;\r\n&lt;jsp\:include page\="footer.jsp" /&gt;</template></templates>
+overriddenByCSS=,SCRIPT_AREA_BORDER,commentBorder,commentText,jsp_content,tagAttributeEquals,tagAttributeName,tagAttributeValue,tagBorder,tagName,
+tagAttributeEquals=\#D8D8D8 | null | null | null | null | null
+tagAttributeName=\#8DCBE2 | null | null | null | null | null
+tagAttributeValue=\#FFC600 | null | null | null | null | null
+tagBorder=\#FFFFFF | null | null | null | null | null
+tagName=\#03a8d8 | null | true | false | false | false

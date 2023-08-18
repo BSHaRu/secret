@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>js_ex_01</title>
+    <script>
+        // 사용자에게 특정 값을 입력받아 입력받은 값을 반환 -> prompt()
+        let input = prompt("숫자를 입력해주세요.");
+        if(input % 3 == 0){
+            document.write(input+"은(는) 3의 배수입니다.");
+        }else{
+            document.write(input+"은(는) 3의 배수가 아닙니다.");
+        }
+
+        // 반복문으로 만들기 
+        // 사용자가 수치를 표현할 수 업는 값을 입력하면 종료
+        // 반복문을 효율적으로 사용하는방법 - 탈출을 먼저 적는게 좋음
+        while(true){
+            input = prompt("숫자를 입력해주세요.");
+            let answer ="숫자가 아닙니다.";
+            // null : 취소 or 그냥 닫으면 값이 없기때문에 null로 인식
+            if(input == null) { 
+                alert(answer);
+                break;
+            }
+            /* trim : 문자열 좌우 공백을없애주는 친구
+            ex) "a     "; -> "a";
+                "  a   "; -> "a";
+                "  a  b  "; -> "a  b";
+                "        "; -> ""
+            */
+            input = input.trim();
+
+            // "" : 사용자가 아무것도 작성을 안함 -> 공백 => null이랑 다름
+            // isNaN : 수치로 변한할 수 없는 값이면 true로 반환
+            // -> 사용자가 수치를 입력 안했거나 문자를 입력하면 탈출해라
+            if(input == "" || isNaN(input)){
+                alert(answer);
+                break;
+            }
+            if(input % 3 == 0){
+                answer = input+"은(는) 3의 배수입니다.";
+            }else{
+                answer = input+"은(는) 3의 배수가 아닙니다.";
+            }
+            alert(answer);
+        } 
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title>쌤풀이_ex_03</title>
+    <style>
+        body{
+            text-align: left;
+            color: rgb(255, 255, 255);
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        div#wrapper{
+            width: 100%;
+            /* 내부컨텐츠 없더라도 최소 높이를 300px 가짐 */
+            min-height: 300px;
+        }
+
+        header, footer, nav, aside, section{
+            border:1px solid gray;
+            margin:5px;
+            padding: 10px;
+        }
+
+        header{
+            height:50px;
+            background-color: skyblue;
+        }
+
+        nav, section, aside{
+            float:left;
+            height: 500px;
+            box-sizing: border-box;
+        }
+
+        nav{
+            background-color: pink;
+            width:100px;
+        }
+
+        nav ol{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ol li{
+            text-align: center;
+            width:100%
+        }
+
+        nav ol li a{
+            text-decoration: none;
+            color:black;
+        }
+
+        nav ol li:hover a{
+            color:white;
+        }
+        section{
+            background-color: lightgreen;
+            width: 670px;
+        }
+
+        article{
+            width:90%;
+            margin:20px;
+            background-color: #999;
+        }
+
+        aside{
+            background-color: pink;
+            width:100px;
+        }
+
+        footer{
+            height: 50px;
+            background-color: skyblue;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <p>header</p>
+        </header>
+        <main>
+            <nav>
+                <p>nav</p>
+                <!-- ol>(li>a{menu-$})*3 -->
+                <ol>
+                    <li><a href="">menu-1</a></li>
+                    <li><a href="">menu-2</a></li>
+                    <li><a href="">menu-3</a></li>
+                </ol>
+            </nav>
+            <section>
+                <p>section</p>
+                <article>
+                    <p>article</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga ab numquam dolore enim, repellendus ipsam at aspernatur velit, id sit nobis quisquam voluptatibus vitae! Fuga ad incidunt eius sapiente fugit, nobis placeat neque ratione ea libero earum voluptate officia beatae corrupti nisi corporis voluptates cumque recusandae facere odio aspernatur? Adipisci numquam voluptate odio perspiciatis, praesentium debitis fuga iste impedit assumenda consequatur, doloremque veniam nisi totam quam! Corrupti, animi atque.</p>
+                </article>
+            </section>
+            <aside>
+                <p>aside</p>
+            </aside>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

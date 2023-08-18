@@ -1,0 +1,59 @@
+<!-- 1_animation.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        body{
+            background-image: url(../../img/transform_rotate.png);
+        }
+        .anim{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            animation-name: changeStyle;
+            animation-duration: 3s;
+            /* 애니메이션 효과 몇번 반복 할 것인지 횟수 지정 */
+            animation-iteration-count: 3;
+            animation-iteration-count: infinite;
+            /* transiton에서 본거랑 동일함 */
+            animation-timing-function: ease;
+            
+            /* 
+                애니메이션 효과 진행 방향
+            alternate : 정해진 순서대로 진행했다가 반대순서대로 진행
+            alternate-reverse : 반대순서로 진행했다가 정해진 순서대로 진행
+            reverse : 반대 방향으로 진행
+            normal : 정해진 순서대로 진행
+            */
+            animation-duration: alternate;
+            /* 지연 시간 */
+            animation-delay: 0.5s;
+             /* 위에 내용 한번에 적용하기 */
+             animation: changeStyle 3s infinite ease alternate;
+        }
+
+        /* changeStyle은 임의로 지정하는거라 아무거나 적으면됨 */
+        @keyframes changeStyle{
+            0%{
+                width:100px;
+            }
+
+            50%{
+                width:300px;
+                background-color: pink;
+                transform: rotate(360deg);
+            }
+
+            100%{
+                width:200px;
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="anim"></div>
+</body>
+</html>

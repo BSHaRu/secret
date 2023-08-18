@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+	/**
+	 * 시점 : run button click 시
+	 * 대상 : div#target 내부 h2
+	 * 기능 : 태그 변경 (h2 => h3)
+	 * 함수 : html(), replace(), replaceAll()
+	 */
+
+		$(function(){
+			$('[value="run"]').click(function(){
+		// let s = str.replace('a','b'); : a라는 문자열을 b라는 문자열로 바꿔줌
+		// -> "ABCDA".replace('A','B'); => "BBCDA" 
+		//	replaceAll : jqurey에만 있는 함수라서 js에서 못씀
+		// -> "ABCDA".replaceAll('A','B'); =>"BBCDB"
+				let html = $("#target").html();
+				console.log(html);
+				let result = html.replaceAll("h2","h3");
+		// replace("h2","h3")를 하게 되면 <h2>는 <h3>로 바뀌지만, </h2>는 바뀌지 않음
+				console.log(result);
+				$("#target").html(result);
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="target"
+		style="color: rgb(51, 51, 51); width: 155px; height: 150px; float: left; border: 1px solid rgb(34, 34, 34); background-color: rgb(102, 205, 170); margin: 10px; padding: 5px; background-position: initial initial; background-repeat: initial initial;">
+		#target<br>
+		<h2
+			style="padding: 5px; border: 1px solid rgb(119, 119, 119); background-color: rgb(221, 255, 0); background-position: initial initial; background-repeat: initial initial;">I'm
+			h2</h2>
+	</div>
+	<input type="button" value="run" />
+</body>
+</html>

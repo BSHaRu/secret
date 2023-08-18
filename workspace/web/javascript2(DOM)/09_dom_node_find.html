@@ -1,0 +1,56 @@
+<!-- 09_dom_node_find.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+    <!-- header>nav>ul>li*3 -->
+    <header>
+        <nav id = "grandParents">
+            <ul id = "parents">
+                <li id = "one">첫째</li>
+                <li id = "two">둘째</li>
+                <li id = "three">막내</li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        // 자식 요소 찾기
+        // 기준 요소 : 기준 아이디 속성값이 parents인 요소
+        let parents = document.getElementById("parents");
+        // parents 요소의 모든 자식 요소 / 줄바꿈 및 공백도 자식요소(text)로 취급함
+        let every = parents.childNodes;
+        console.log(every);
+
+        // 첫번째 자식 요소 - 첫째
+        let first = parents.firstChild;
+        console.log(first);
+        // 마지막 자식 요소 - 막내
+        let last = parents.lastChild;
+        console.log(last);
+
+        // 부모 요소 찾기
+        // 기준 요소 :아이디 값이 one인 요소
+        let one = document.getElementById("one");
+        parents = one.parentNode; 
+        console.log(`one 의 parents : ${parents.id}`);
+        let grandParents = parents.parentNode;  // one.parentNode.parentNode;로 지정해도 동일하다.
+        console.log(`one 의 parents parents : ${grandParents.id}`);
+
+        // 형제 요소 찾기
+        let two = document.getElementById("two");
+        // Sibling - 형제
+        // 다음 형제 요소(two 기준으로 다음형제)
+        last = two.nextSibling;
+        console.log(last);
+        // 이전 형제 요소(two 기준으로 이전형제)
+        first = two.previousSibling;
+        console.log(first);
+        // 위에서 빈칸도 자식요소 취급이라고 둘다 text로 찾아진다 
+
+    </script>
+</body>
+</html>

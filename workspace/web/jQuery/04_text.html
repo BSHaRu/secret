@@ -1,0 +1,39 @@
+<!-- 04.text.html -->
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1>h1 - 1</h1>
+    <h1>h1 - 2</h1>
+    <!-- p#target>b -->
+    <p id="target">이것은<b>     하나의 단락</b>입니다.</p>
+    <button id="text">text</button>
+    <button id="html">html</button>
+
+    <script>
+        // text() == innerText - 해당 컨텐츠를 문자열 그대로 출력
+        $("h1:first-child").text("<a href='#'>text()</a>");
+        // html() == innerHTML - 태그요소를 그대로 적용시켜 줌
+        $("h1:nth-child(2)").html("<a href='#'>html()</a>");
+
+        $("#text").click(function(){
+            let content = $("#target").text();
+            alert(content);
+        });
+
+        $("#html").click(function(){
+            let content = $("#target").html();
+            alert(content);
+        })
+    </script>
+</body>
+</html>
